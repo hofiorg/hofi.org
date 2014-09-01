@@ -58,3 +58,25 @@ img.foot
   margin-top:10px;
   border:0px;
 }
+
+#footer {
+  position:absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #e9eaed;
+  height: 15px;
+  padding-top: 5px;
+  font-size: 10px;
+  text-align: center;
+  color: #939393;
+}
+
+a.footer {
+  color: #666666;
+  text-decoration: none;
+}
+
+a.footer:hover {
+  color: #666666;
+  text-decoration: underline;
+}
