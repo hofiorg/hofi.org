@@ -6,11 +6,13 @@ body
   font-family: arial, helvetica, sans-serif;
   color: #333;
 }
+
 div.content
 {
   width: 100%;
   text-align: center;
 }
+
 div.foot_image
 {
   margin-top:10px;
@@ -21,6 +23,7 @@ div.foot_image
   display:inline-block;
   vertical-align: top;
 }
+
 div.foot_text
 {
   margin-top:10px;
@@ -33,6 +36,7 @@ div.foot_text
   display:inline-block;
   vertical-align: top;
 }     
+
 a.foot:link,a.foot:visited,a.foot:active,a.foot:focus
 {
   font-size: 10px;
@@ -40,13 +44,15 @@ a.foot:link,a.foot:visited,a.foot:active,a.foot:focus
   color: #333;
   text-decoration: none;
 } 
+
 a.foot:hover
 {
   font-size: 10px;
   font-family: arial, helvetica, sans-serif;
   color: #333;
   text-decoration:underline;
-}     
+}    
+
 img.foot
 {
   margin-top:10px;
