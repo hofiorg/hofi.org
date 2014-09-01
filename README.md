@@ -21,8 +21,11 @@ The recommended way to install the used WebComponents is through Bower:<br/>
 <code>bower install --save Polymer/polymer</code><br/>
 <code>bower install --save Polymer/core-elements</code><br/>
 <code>bower install --save Polymer/paper-elements</code><br/>
-
-TODO: Installation for Code-Directory
+<br/>
+<code>cd code</code><br/>
+<code>bower install --save Polymer/polymer</code><br/>
+<code>bower install --save Polymer/core-elements</code><br/>
+<code>bower install --save Polymer/paper-elements</code><br/>
 
 ##### Install jQuery
 
