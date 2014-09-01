@@ -10,9 +10,9 @@ Sourcecode for: <br/>
 
 #### Installation
 
-<code>git clone https://github.com/hofiorg/hofi.org.git</code>
-<code>cd hofi.org</code>
-<code>cd web</code>
+<code>git clone https://github.com/hofiorg/hofi.org.git</code><br/>
+<code>cd hofi.org</code><br/>
+<code>cd web</code><br/>
 
 ##### Install Polymer Components
 
