@@ -18,9 +18,6 @@ Sourcecode for: <br/>
 
 The recommended way to install the used WebComponents is through Bower:<br/>
 [Bower - A package manager for the web (bower.io)](http://www.bower.io/)<br/><br/>
-<code>bower install --save Polymer/polymer</code><br/>
-<code>bower install --save Polymer/core-elements</code><br/>
-<code>bower install --save Polymer/paper-elements</code><br/>
 <code>bower install jquery</code><br/>
 <br/>
 <code>cd code</code><br/>
@@ -28,6 +25,12 @@ The recommended way to install the used WebComponents is through Bower:<br/>
 <code>bower install --save Polymer/core-elements</code><br/>
 <code>bower install --save Polymer/paper-elements</code><br/>
 <code>bower install github-gist</code><br/>
+<br/>
+<code>cd ..</code><br/>
+<code>cd wi</code><br/>
+<code>bower install --save Polymer/polymer</code><br/>
+<code>bower install --save Polymer/core-elements</code><br/>
+<code>bower install --save Polymer/paper-elements</code><br/>
 
 #### Contributing
 Any suggestions, improvements or issues are welcome. :)
