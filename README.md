@@ -23,17 +23,17 @@ The recommended way to install the used WebComponents is through Bower:<br/>
 
 TODO: Installation for Code-Directory
 
-#### Install jQuery
+##### Install jQuery
 
 TODO: Installation Guide
 
 
-##### Contributing
+#### Contributing
 Any suggestions, improvements or issues are welcome. :)
 
 @hofiorg
 
-##### License
+#### License
 MIT
 
 Copyright &copy; 2014 [@hofiorg](https://github.com/hofiorg)
