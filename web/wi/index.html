@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+
+    <title>Wirtschaftsinformatik</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
+
+    <script src="/bower_components/platform/platform.js"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+
+    <link rel="import" href="/bower_components/core-scroll-header-panel/core-scroll-header-panel.html">
+    <link rel="import" href="/bower_components/core-tooltip/core-tooltip.html">
+    <link rel="import" href="/bower_components/core-toolbar/core-toolbar.html">
+    <link rel="import" href="/bower_components/core-icon-button/core-icon-button.html">
+    <link rel="import" href="/bower_components/paper-button/paper-button.html">
+
+    <style shim-shadowdom>
+
+
+        html, body {
+        height: 100%;
+        }
+
+        body {
+        margin: 0;
+        font-family: sans-serif;
+        color: #333;
+        }
+
+        core-scroll-header-panel {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        }
+
+        core-scroll-header-panel::shadow #headerBg {
+        background-color: #f4b400;
+        }
+
+        core-scroll-header-panel::shadow #condensedHeaderBg {
+        background-color: #f4b400;
+        }
+
+        core-toolbar {
+        background-color: #f4b400;
+        color: #f1f1f1;
+        fill: #f1f1f1;
+        }
+
+        .title {
+        -webkit-transform-origin: 0;
+        transform-origin: 0;
+        font-size: 40px;
+        font-family: "Roboto",Helvetica,Arial,sans-serif;
+        }
+
+        .content {
+        height: 800px;
+        width: 230px;
+        padding: 10px 30px;
+        }
+
+        .version {
+        margin: 10px;
+        }
+
+        .my-button {
+        background: #4285f4;
+        color: #fff;
+        }
+
+        .my-button:hover {
+        background: #2a56c6;
+        }
+
+        .my-button::shadow #ripple {
+        color: #2a56c6;
+        }
+
+        paper-button[raisedButton] {
+        background: none repeat scroll 0% 0% #4285F4;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .title {
+            -webkit-transform-origin: 0;
+            transform-origin: 0;
+            font-size: 20px;
+            font-family: "Roboto",Helvetica,Arial,sans-serif;
+            }
+
+            .content {
+            height: 420px;
+            width: 250px;
+            padding: 10px 30px;
+            }
+
+            body {
+                padding : 0px;
+                margin : 0px;
+                height : 100% ;
+                width : 100% ;
+                overflow : auto;
+            }
+
+            core-tooltip {
+                width: 250px;
+                overflow : hidden;
+            }
+
+        }
+
+    </style>
+</head>
+<body unresolved hofi_org_controller>
+
+    <core-scroll-header-panel condenses noDissolve keepCondensedHeader>
+
+        <core-toolbar class="tall">
+
+            <a style="color:#FFFFFF" href="http://www.mleue.de"><core-icon-button icon="arrow-back" id="back"></core-icon-button></a>
+            <div flex></div>
+            <div class="bottom indent title"><span id="title"></span>Wirtschaftsinformatik</span></div>
+
+        </core-toolbar>
+
+        <div class="content">
+
+            <br/><br/>
+
+            <core-tooltip label="Aufgabenstellung" position="right">
+                <a href="http://mleue.de/daten/schnittstellen.pdf"><paper-button id="arbeitsblatt" class="my-button" raisedbutton icon="drive-document" label="Arbeitsblatt"></paper-button></a>
+            </core-tooltip>
+            <br/><br/><br/>
+
+            <core-tooltip label="Schnittstellen &Uuml;bersicht angepasst auf die Problemstellung" position="right">
+                <a href="http://mleue.de/daten/uebung_2014_3.pdf"><paper-button id="schnittstellen" class="my-button" raisedbutton icon="attachment" label="Schnittstellen"></paper-button></a>
+            </core-tooltip>
+            <br/><br/><br/>
+
+            <core-tooltip label="Download der Dateien - nach C:\bwl kopieren" position="right">
+                <a href="http://mleue.de/daten/bwl_samstag.zip"><paper-button id="eclipse_win" class="my-button" raisedbutton icon="file-download" label="Eclipse Windows"></paper-button></a>
+            </core-tooltip>
+            <br/><br/><br/>
+
+            <core-tooltip label="Download der Dateien f&uuml;r Apple - auf den Schreibtisch kopieren" position="right">
+                <a href="http://mleue.de/daten/bwl-mac_samstag.zip"><paper-button id="eclipse_mac" class="my-button" raisedbutton icon="file-download" label="Eclipse Mac OS"></paper-button></a>
+            </core-tooltip>
+            <br/><br/><br/>
+
+        </div>
+
+    </core-scroll-header-panel>
+
+</body>
+</html>
