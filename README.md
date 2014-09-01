@@ -5,8 +5,8 @@ hofi.org
 
 Sourcecode for: <br/>
 <code>[hofi.org](http://hofi.org)</code><br/>
-<code>[hofi.org/wi](http://hofi.org/wi)</code><br/>
 <code>[code.hofi.org](http://code.hofi.org)</code><br/>
+<code>[wi.hofi.org](http://wi.hofi.org)</code><br/>
 
 #### Installation
 
