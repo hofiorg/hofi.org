@@ -29,8 +29,8 @@ The recommended way to install the used WebComponents is through Bower:<br/>
 
 ##### Install jQuery
 
-TODO: Installation Guide
-
+<code>cd ..</code><br/>
+<code>bower install jquery</code><br/>
 
 #### Contributing
 Any suggestions, improvements or issues are welcome. :)
