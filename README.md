@@ -11,6 +11,8 @@ Sourcecode for: <br/>
 #### Installation
 
 <code>git clone https://github.com/hofiorg/hofi.org.git</code>
+<code>cd hofi.org</code>
+<code>cd web</code>
 
 ##### Install Polymer Components
 
