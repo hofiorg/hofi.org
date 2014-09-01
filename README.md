@@ -17,4 +17,4 @@ Any suggestions, improvements or issues are welcome. :)
 
 MIT
 
-Copyright (c) 2014 [@hofiorg](https://github.com/hofiorg)
+Copyright &copy; 2014 [@hofiorg](https://github.com/hofiorg)
