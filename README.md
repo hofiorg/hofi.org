@@ -34,7 +34,7 @@ The recommended way to install the used WebComponents is through Bower:<br/>
 #### Contributing
 Any suggestions, improvements or issues are welcome. :)
 
-@hofiorg
+[@hofiorg](https://github.com/hofiorg)
 
 #### License
 MIT
