@@ -1,0 +1,83 @@
+[drawer] {
+  background-color: #fff;
+  box-shadow: 1px 0 1px rgba(0, 0, 0, 0.1);
+}
+
+[drawer] core-toolbar {
+  background-color: rgba(41,41,41,0.9);
+  border-bottom: 1px solid rgba(16,16,16,0.5);
+  color: #fff;
+}
+
+[main] core-toolbar {
+  background-color: rgba(41,41,41,0.9);
+  border-bottom: 1px solid rgba(16,16,16,0.5);
+  color: #fff;
+}
+
+#drawerPanel:not([narrow]) #menuButton {
+  display: none;
+}
+
+.content {
+  padding: 30px 70px 30px 70px;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.title {
+  font-size: 18px;
+  padding-left: 52px;
+}
+
+@media only screen and (max-width: 860px){
+  .content {
+    padding: 10px 10px 10px 10px;
+    font-size: 10px;
+    font-weight: 300;
+  }
+
+  .title {
+    font-size: 16px;
+    padding-left: 0px;
+  }
+}
+
+paper-icon-button.twitter {
+  -webkit-transition: color 0.3s ease;
+  -moz-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+
+  color: #ffffff;
+}
+
+paper-icon-button.twitter:hover {
+  color: #55ACEE;
+}
+
+paper-icon-button.facebook {
+  -webkit-transition: color 0.3s ease;
+  -moz-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+
+  color: #ffffff;
+}
+
+paper-icon-button.facebook:hover {
+  color: #3b5998;
+}
+
+paper-icon-button.gplus {
+  -webkit-transition: color 0.3s ease;
+  -moz-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+
+  color: #ffffff;
+}
+
+paper-icon-button.gplus:hover {
+  color: #dd4b39;
+}
