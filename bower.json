@@ -21,5 +21,8 @@
     "paper-elements": "Polymer/paper-elements#~0.4.0",
     "github-gist": "~0.1.1",
     "hofi.org": "https://github.com/hofiorg/hofi.org.git"
+  },
+  "resolutions": {
+    "polymer": ">=0.4.0 <1.0.0"
   }
 }
