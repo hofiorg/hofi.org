@@ -14,7 +14,7 @@ background-color:#272822;
 .gist .gist-file.scroll .gist-data{position:absolute;top:0px;right:0px;bottom:30px;left:0px;overflow:scroll}
 .gist .gist-file.scroll .gist-meta{position:absolute;bottom:0px;right:0px;left:0px}
 .gist .gist-file .gist-data .line-data{padding:.5em !important}
-.gist .gist-file .gist-data .line-pre{color:#f8f8f2; font-family:Consolas, "Liberation Mono", Courier, monospace;background:transparent !important;border:none !important;margin:0 !important;padding:0 !important}
+.gist .gist-file .gist-data .line-pre{font-size: 12px; color:#f8f8f2; font-family:Consolas, "Liberation Mono", Courier, monospace;background:transparent !important;border:none !important;margin:0 !important;padding:0 !important}
 .gist .gist-file .gist-data .gist-highlight{background:transparent !important}
 .gist .gist-file .gist-data .line-numbers{/*background-color:#ececec;*/color:#aaa;/*border-right:1px solid #ddd;*/text-align:right;padding:.5em}
 .gist .gist-file .gist-data .line-numbers .line-number{clear:right;display:block}
@@ -78,3 +78,17 @@ background-color:#272822;
 .gist-syntax .vg{color:teal}
 .gist-syntax .vi{color:teal}
 .gist-syntax .il{color:#099}
+
+@media only screen and (max-width: 860px){
+
+  html {
+  	-webkit-text-size-adjust: none; 
+  }
+
+	.gist{font-size: 10px}
+	.gist .gist-file .gist-meta{font:10px "Helvetica Neue", Helvetica, arial, freesans, clean, sans-serif;}
+	.gist .gist-file .gist-data .line-pre{font-size: 10px}
+	.gist .gist-file .gist-data .line-numbers .line-number{font-size: 10px}
+	.gist .gist-file .gist-data{font-size: 10px}
+	.gist pre{font-size: 10px}
+}
