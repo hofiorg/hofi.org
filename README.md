@@ -20,6 +20,11 @@ The recommended way to install the used WebComponents is through Bower:<br/>
 
 <code>bower install</code><br/>
 
+##### Start Local Server
+
+<code>cd web</code><br/>
+<code>python -m SimpleHTTPServer 8000</code><br/>
+
 #### Contributing
 Any suggestions, improvements or issues are welcome :)
 
