@@ -21,9 +21,7 @@ The recommended way to install the used WebComponents is through Bower:<br/>
 <code>bower install https://github.com/hofiorg/hofi.org.git</code><br/>
 
 #### Contributing
-Any suggestions, improvements or issues are welcome. :)
-
-[@hofiorg](https://github.com/hofiorg)
+Any suggestions, improvements or issues are welcome :)
 
 #### License
 MIT
