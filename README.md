@@ -18,7 +18,7 @@ Sourcecode for: <br/>
 The recommended way to install the used WebComponents is through Bower:<br/>
 [Bower - A package manager for the web (bower.io)](http://www.bower.io/)
 
-<code>bower install https://github.com/hofiorg/hofi.org.git</code><br/>
+<code>bower install</code><br/>
 
 #### Contributing
 Any suggestions, improvements or issues are welcome :)
