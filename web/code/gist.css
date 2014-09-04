@@ -94,6 +94,7 @@
 }
 .gist .gist-file .gist-data .line-numbers .line-number
 {
+  font-size: 12px;
   clear: right;
   display: block;
 }
@@ -356,10 +357,6 @@
 }
 @media only screen and (max-width: 860px)
 {
-  html
-  {
-    webkit-text-size-adjust: none;
-  }
   .gist
   {
     font-size: 10px;
@@ -368,16 +365,18 @@
   {
     font: 10px "Helvetica Neue", Helvetica, arial, freesans, clean, sans-serif;
   }
-  .gist .gist-file .gist-data .line-pre
+  .gist .gist-file .gist-data
   {
     font-size: 10px;
+  }
+  .gist .gist-file .gist-data .line-pre
+  {
+    font: 10px "Liberation Mono", Courier, monospace;
+    font-family: Consolas, "Liberation Mono", Courier, monospace;
   }
   .gist .gist-file .gist-data .line-numbers .line-number
   {
-    font-size: 10px;
-  }
-  .gist .gist-file .gist-data
-  {
+    font-family: Consolas, "Liberation Mono", Courier, monospace;    
     font-size: 10px;
   }
   .gist pre
