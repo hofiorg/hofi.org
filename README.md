@@ -27,12 +27,12 @@ The recommended way to install the used WebComponents is through Bower:<br/>
 
 #### Used Components
 
-* *jquery*
-* *polymer*
+* **jquery**
+* **polymer**
 *     core-elements
 *     paper-elements
-* *github-gist* by [@dmaslov](https://github.com/dmaslov)
-* *polymer-github-card* by [@iamolivinius](https://github.com/iamolivinius)
+* **github-gist** by [@dmaslov](https://github.com/dmaslov)
+* **polymer-github-card** by [@iamolivinius](https://github.com/iamolivinius)
 
 #### Contributing
 Any suggestions, improvements or issues are welcome :)
