@@ -77,6 +77,28 @@
       responsiveWidth: '860px',
 
       menuSelect: function(e, detail) {
+
+        if(this.$.menu.selected == 0)
+          document.querySelector('#dartmenu').icon='chevron-right';        
+        else
+          document.querySelector('#dartmenu').icon='expand-more';        
+        if(this.$.menu.selected == 1)
+          document.querySelector('#htmlmenu').icon='chevron-right';        
+        else
+          document.querySelector('#htmlmenu').icon='expand-more';        
+        if(this.$.menu.selected == 2)
+          document.querySelector('#javascriptmenu').icon='chevron-right';        
+        else
+          document.querySelector('#javascriptmenu').icon='expand-more';        
+        if(this.$.menu.selected == 3)
+          document.querySelector('#polymermenu').icon='chevron-right';        
+        else
+          document.querySelector('#polymermenu').icon='expand-more';              
+        if(this.$.menu.selected == 4)
+          document.querySelector('#webcomponentsmenu').icon='chevron-right';        
+        else
+          document.querySelector('#webcomponentsmenu').icon='expand-more';    
+
         if (detail.isSelected) {
           this.item = detail.item;
 
