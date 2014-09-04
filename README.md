@@ -38,6 +38,6 @@ The recommended way to install the used WebComponents is through Bower:<br/>
 Any suggestions, improvements or issues are welcome :)
 
 #### License
-MIT
+[MIT](http://opensource.org/licenses/MIT)
 
 Copyright &copy; 2014 [@hofiorg](https://github.com/hofiorg)
