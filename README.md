@@ -29,6 +29,7 @@ The recommended way to install the used WebComponents is through Bower:<br/>
 
 * [github-gist](https://github.com/dmaslov/github-gist) by [@dmaslov](https://github.com/dmaslov)
 * [google-analytics-tracker](https://github.com/erikringsmuth/google-analytics-tracker) by [@erikringsmuth](https://github.com/erikringsmuth)
+* [google-youtube](https://github.com/GoogleWebComponents/google-youtube) by [@ebidel](https://github.com/ebidel)
 * jquery
 * polymer
     * core-elements
