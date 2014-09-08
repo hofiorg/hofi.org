@@ -21,11 +21,13 @@
     "jquery": "~2.1.1",
     "github-gist": "dmaslov/github-gist#master",
     "polymer-github-card": "~0.0.1",
-    "google-analytics-tracker": "~0.1.1"
+    "google-analytics-tracker": "~0.1.1",
+    "google-youtube": "~0.0.5"
   },
   "resolutions": {
     "polymer": "master",
     "platform": "master",
-    "core-component-page": "master"
+    "core-component-page": "master",
+    "core-shared-lib": "master"
   }
 }
