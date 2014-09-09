@@ -14,6 +14,10 @@ margin-bottom: 20px;
 margin-top: 30px;
 }
 
+hr {
+  border:solid #cccccc 1px;
+}
+
 p {
 margin-top: 40px;
 }
