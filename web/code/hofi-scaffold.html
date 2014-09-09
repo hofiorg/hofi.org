@@ -164,4 +164,13 @@
     });
 
     </script>
+
+    <script language="javascript" type="text/javascript">
+      function resizeIframe(obj) {
+        setTimeout(function() { 
+          obj.style.height = (obj.contentWindow.document.body.scrollHeight + 300) + 'px';
+        }, 1000);
+      }
+    </script>    
+
 </polymer-element>
