@@ -1,6 +1,6 @@
 {
   "name": "hofi.org",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/hofiorg/hofi.org",
   "authors": [
     "Christian Hofmann <hofiorg@googlemail.com>"
@@ -18,11 +18,11 @@
     "polymer": "Polymer/polymer#master",
     "core-elements": "Polymer/core-elements#master",
     "paper-elements": "Polymer/paper-elements#master",
-    "jquery": "~2.1.1",
+    "jquery": "master",
     "github-gist": "dmaslov/github-gist#master",
-    "polymer-github-card": "~0.0.1",
-    "google-analytics-tracker": "~0.1.1",
-    "google-youtube": "~0.0.5"
+    "polymer-github-card": "master",
+    "google-analytics-tracker": "master",
+    "google-youtube": "master"
   },
   "resolutions": {
     "polymer": "master",
