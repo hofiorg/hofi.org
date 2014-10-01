@@ -18,7 +18,7 @@
     "polymer": "Polymer/polymer#master",
     "core-elements": "Polymer/core-elements#master",
     "paper-elements": "Polymer/paper-elements#master",
-    "jquery": "master",
+    "jquery": "~2.1.1",
     "github-gist": "dmaslov/github-gist#master",
     "polymer-github-card": "master",
     "google-analytics-tracker": "master",
