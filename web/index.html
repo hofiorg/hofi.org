@@ -23,14 +23,12 @@
   <link rel="import" href="http://www.hofi.org/bower_components/google-analytics-tracker/google-analytics-tracker.html"/>
 
   <google-analytics-tracker code="UA-60193-1"></google-analytics-tracker>
+
 </head>
 <body>
   <div class="content">
     <script type="text/javascript">
-      if(navigator.userAgent.match('CriOS'))
-        h = $(document).height() - 150;
-      else
-        h = $(document).height() - 60;  
+      h = $(document).height() - 150;
       document.write('<a class="twitter-timeline" href="https://twitter.com/hofiorg" data-chrome="noheader nofooter" data-widget-id="373541372743004160" height="' + h + '"></a>');
     </script>
     <noscript>
