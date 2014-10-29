@@ -96,6 +96,7 @@ img {
 paper-button {
   background: #4285f4;
   color: #fff;
+  margin-left: 0px;
 }
 
 paper-button:hover {

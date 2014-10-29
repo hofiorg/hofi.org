@@ -28,6 +28,7 @@
     "polymer": "master",
     "platform": "master",
     "core-component-page": "master",
-    "core-shared-lib": "master"
+    "core-shared-lib": "master",
+    "core-localstorage": "master"
   }
 }
