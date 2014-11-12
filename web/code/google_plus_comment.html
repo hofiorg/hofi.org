@@ -1,13 +1,15 @@
 <html>
   <body style="margin: 0px">
-
 	<script src="https://apis.google.com/js/plusone.js">
 	</script> 
-	<div id="comments"></div>
+	<div style="overflow: auto;-webkit-overflow-scrolling:touch;">
+		<div id="comments"></div>
+	</div>
 	<script>
+
 	gapi.comments.render('comments', {
 	    href: window.location,
-	    width: '624',
+	    width: document.body.scrollWidth - 20, // 624
 	    first_party_property: 'BLOGGER',
 	    view_type: 'FILTERED_POSTMOD'
 	});
