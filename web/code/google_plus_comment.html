@@ -7,9 +7,13 @@
 	</div>
 	<script>
 
+	var mywidth = document.body.scrollWidth - 20;
+	if(mywidth > 624)
+		mywidth	= 624;
+
 	gapi.comments.render('comments', {
 	    href: window.location,
-	    width: document.body.scrollWidth - 20, // 624
+	    width: mywidth, // 624
 	    first_party_property: 'BLOGGER',
 	    view_type: 'FILTERED_POSTMOD'
 	});
