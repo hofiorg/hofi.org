@@ -12,7 +12,17 @@ h1 {
   font-size: 24px;
   margin-bottom: 20px;
   margin-top: 30px;
+  /* new */
+  -webkit-margin-before: 0em;
 }
+
+h1.rand {
+  font-weight: 300;
+  font-size: 24px;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
 
 hr {
   border:solid #cccccc 1px;
@@ -26,7 +36,13 @@ h2 {
   font-size: 14px;
 }
 
-div.code {
+div.code {  
+  /*margin-top: 40px;*/
+  font-size: 12px;
+  margin-bottom: 40px;
+}
+
+div.coderand {  
   margin-top: 40px;
   font-size: 12px;
   margin-bottom: 40px;

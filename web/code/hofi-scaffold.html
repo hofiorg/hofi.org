@@ -176,7 +176,8 @@
     <script language="javascript" type="text/javascript">
       function resizeIframe(obj) {
         setTimeout(function() { 
-          obj.style.height = (obj.contentWindow.document.body.scrollHeight + 350) + 'px';
+          if(obj.contentWindow != null)
+            obj.style.height = (obj.contentWindow.document.body.scrollHeight + 350) + 'px';
         }, 100);
       }
     </script>    
