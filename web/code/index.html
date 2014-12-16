@@ -83,115 +83,25 @@
 
   <hofi-scaffold label="code.hofi.org">
 
-    <core-submenu id="dartmenu" icon="expand-more" label="Dart">
-      <core-item label="Prozess starten" title="Dart - Prozess starten" url="dart/process.html" tag="dart_process">
-        <a href="#dart_process" target="_self"></a>
-      </core-item>
-      <core-item label="Videos" title="Dart - Videos" url="dart/videos.html" tag="dart_videos">
-        <a href="#dart_videos" target="_self"></a>
-      </core-item>      
-      <core-item label="where" title="Dart - iterate a collection" url="dart/where.html" tag="dart_where">
-        <a href="#dart_where" target="_self"></a>
-      </core-item>
-    </core-submenu>
+    <template is="auto-binding" id="t">
 
-    <core-submenu id="htmlmenu" icon="expand-more" label="HTML + CSS">
-      <core-item label="Abgerundete Bilder" title="CSS - Abgerundete Bilder" url="css/round_image.html" tag="css_round_image">
-        <a href="#css_round_image" target="_self"></a>
-      </core-item>
-      <core-item label="Google+ Kommentare" title="Google Plus Kommentare einbinden" url="css/google_plus_comments.html" tag="google_plus_comments">
-        <a href="#google_plus_comments" target="_self"></a>
-      </core-item>      
-    </core-submenu>
+      <template repeat="{{menu, i in menus}}">
+        <core-submenu id="{{menu.id}}" icon="expand-more" label="{{menu.label}}">
+          <template repeat="{{my, i in menu.sub}}">
+            <core-item label="{{my.label}}" title="{{my.title}}" url="{{my.url}}" tag="{{my.tag}}">
+              <a href="#{{my.tag}}" target="_self"></a>
+            </core-item>
+          </template>
+        </core-submenu>
+      </template>
 
-    <core-submenu id="javascriptmenu" icon="expand-more" label="Javascript">
-      <core-item label="httpGet" title="Javascript - httpGet" url="javascript/http_get.html" tag="javascript_http_get">
-        <a href="#javascript_http_get" target="_self"></a>
-      </core-item>
-      <core-item label="replaceAll" title="Javascript - replaceAll" url="javascript/replace_all.html" tag="javascript_replace_all">
-        <a href="#javascript_replace_all" target="_self"></a>
-      </core-item>
-    </core-submenu>
-
-    <core-submenu id="polymermenu" icon="expand-more" label="Polymer">
-        <core-item label="Paper Icon Buttons" title="Polymer - Paper Icon Buttons" url="polymer/paper_icon_buttons.html" tag="polymer_paper_icon_buttons">
-          <a href="#polymer_paper_icon_buttons" target="_self"></a>
-        </core-item>
-        <core-item label="Scrollbarer Header" title="Polymer - Scrollbarer Header" url="polymer/header.html" tag="polymer_header">
-          <a href="#polymer_header" target="_self"></a>
-        </core-item>
-        <core-item label="Videos" title="Polymer - Videos" url="polymer/videos.html" tag="polymer_videos">
-          <a href="#polymer_videos" target="_self"></a>
-        </core-item>             
-    </core-submenu>
-
-    <core-submenu id="vorlesung_1" icon="expand-more" label="Vorlesung WI - 1">
-      <core-item label="Unterlagen" title="&Uuml;bungsunterlagen" url="vorlesung_1/unterlagen.html" tag="vorlesung_1_unterlagen">
-        <a href="#vorlesung_1_unterlagen" target="_self"></a>
-      </core-item>    
-      <core-item label="16.10.2014" title="Vorlesung am 16.10.2014" url="vorlesung_1/2014_10_16.html" tag="vorlesung_1_2014_10_16">
-        <a href="#vorlesung_1_2014_10_16" target="_self"></a>
-      </core-item>
-      <core-item label="23.10.2014" title="Vorlesung am 23.10.2014" url="vorlesung_1/2014_10_23.html" tag="vorlesung_1_2014_10_23">
-        <a href="#vorlesung_1_2014_10_23" target="_self"></a>
-      </core-item> 
-      <core-item label="30.10.2014" title="Vorlesung am 30.10.2014" url="vorlesung_1/2014_10_30.html" tag="vorlesung_1_2014_10_30">
-        <a href="#vorlesung_1_2014_10_30" target="_self"></a>
-      </core-item>     
-      <core-item label="06.11.2014" title="Vorlesung am 06.11.2014" url="vorlesung_1/2014_11_06.html" tag="vorlesung_1_2014_11_06">
-        <a href="#vorlesung_1_2014_11_06" target="_self"></a>
-      </core-item> 
-      <core-item label="13.11.2014" title="Vorlesung am 13.11.2014" url="vorlesung_1/2014_11_13.html" tag="vorlesung_1_2014_11_13">
-        <a href="#vorlesung_1_2014_11_13" target="_self"></a>
-      </core-item> 
-      <core-item label="27.11.2014" title="Vorlesung am 27.11.2014" url="vorlesung_1/2014_11_27.html" tag="vorlesung_1_2014_11_27">
-        <a href="#vorlesung_1_2014_11_27" target="_self"></a>
-      </core-item> 
-      <core-item label="11.12.2014" title="Vorlesung am 11.12.2014" url="vorlesung_1/2014_12_11.html" tag="vorlesung_1_2014_12_11">
-        <a href="#vorlesung_1_2014_12_11" target="_self"></a>
-      </core-item>                                       
-    </core-submenu>
-
-    <core-submenu id="vorlesung_2" icon="expand-more" label="Vorlesung WI - 2">
-      <core-item label="Unterlagen" title="&Uuml;bungsunterlagen" url="vorlesung_2/unterlagen.html" tag="vorlesung_2_unterlagen">
-        <a href="#vorlesung_2_unterlagen" target="_self"></a>
-      </core-item>        
-      <core-item label="16.10.2014" title="Vorlesung am 16.10.2014" url="vorlesung_2/2014_10_16.html" tag="vorlesung_2_2014_10_16">
-        <a href="#vorlesung_2_2014_10_16" target="_self"></a>
-      </core-item>
-      <core-item label="30.10.2014" title="Vorlesung am 30.10.2014" url="vorlesung_2/2014_10_30.html" tag="vorlesung_2_2014_10_30">
-        <a href="#vorlesung_2_2014_10_30" target="_self"></a>
-      </core-item>      
-      <core-item label="06.11.2014" title="Vorlesung am 06.11.2014" url="vorlesung_2/2014_11_06.html" tag="vorlesung_2_2014_11_06">
-        <a href="#vorlesung_2_2014_11_06" target="_self"></a>
-      </core-item>  
-      <core-item label="13.11.2014" title="Vorlesung am 13.11.2014" url="vorlesung_2/2014_11_13.html" tag="vorlesung_2_2014_11_13">
-        <a href="#vorlesung_2_2014_11_13" target="_self"></a>
-      </core-item>     
-      <core-item label="27.11.2014" title="Vorlesung am 27.11.2014" url="vorlesung_2/2014_11_27.html" tag="vorlesung_2_2014_11_27">
-        <a href="#vorlesung_2_2014_11_27" target="_self"></a>
-      </core-item>                 
-    </core-submenu>    
-
-    <core-submenu id="webcomponentsmenu" icon="expand-more" label="WebComponents">
-      <core-item label="github-gist" title="WebComponents - github-gist" url="webcomponents/github_gist.html" tag="webcomponents_github_gist">
-        <a href="#webcomponents_github_gist" target="_self"></a>
-      </core-item>
-      <core-item label="google-analytics-tracker" title="WebComponents - google-analytics-tracker" url="webcomponents/google_analytics_tracker.html" tag="webcomponents_google_analytics_tracker">
-        <a href="#webcomponents_google_analytics_tracker" target="_self"></a>
-      </core-item>
-      <core-item label="google-youtube" title="WebComponents - google-youtube" url="webcomponents/google_youtube.html" tag="webcomponents_google_youtube">
-        <a href="#webcomponents_google_youtube" target="_self"></a>
-      </core-item>      
-      <core-item label="polymer-github-card" title="WebComponents - polymer-github-card" url="webcomponents/polymer_github_card.html" tag="webcomponents_polymer_github_card">
-        <a href="#webcomponents_polymer_github_card" target="_self"></a>
-      </core-item> 
-    </core-submenu>
-
+    </template>
   </hofi-scaffold>
   
   <div id="footer">
     <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a class="footer" href="https://github.com/hofiorg/hofi.org">code.hofi.org</a></span> von <a class="footer" xmlns:cc="http://creativecommons.org/ns#" href="https://plus.google.com/u/0/+ChristianHofmannHofi" property="cc:attributionName" rel="cc:attributionURL">Christian Hofmann</a> ist lizenziert unter <a class="footer" rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>&nbsp;
   </div>
+
+  <script src="menu.js"></script>
 </body>
 </html>
