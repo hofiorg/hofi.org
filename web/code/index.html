@@ -84,17 +84,15 @@
   <hofi-scaffold label="code.hofi.org">
 
     <template is="auto-binding" id="t">
-
-      <template repeat="{{menu, i in menus}}">
+      <template repeat="{{menu in menus}}">
         <core-submenu id="{{menu.id}}" icon="expand-more" label="{{menu.label}}">
-          <template repeat="{{my, i in menu.sub}}">
+          <template repeat="{{my in menu.sub}}">
             <core-item label="{{my.label}}" title="{{my.title}}" url="{{my.url}}" tag="{{my.tag}}">
               <a href="#{{my.tag}}" target="_self"></a>
             </core-item>
           </template>
         </core-submenu>
       </template>
-
     </template>
   </hofi-scaffold>
   

@@ -1,0 +1,43 @@
+<link rel="import" href="http://www.hofi.org/bower_components/polymer/polymer.html">
+
+<polymer-element name="hofiorg-toc" attributes="user">
+
+    <template>
+      <link rel="stylesheet" href="hofi-scaffold.css" shim-shadowdom>
+      <link rel="stylesheet" href="page.css" shim-shadowdom>
+
+      <template is="auto-binding" id="t">
+        <ul>
+          <template repeat="{{menu in menus}}">
+            <template if="{{menu.labelfull}}">
+              <li><b>{{menu.labelfull}}</b>
+            </template>
+            <template if="{{!menu.labelfull}}">
+              <li><b>{{menu.label}}</b>
+            </template>            
+              <ul class="yes">
+                <template repeat="{{my in menu.sub}}">
+                  <template if="{{my.titlefull}}">
+                    <li><a href="http://code.hofi.org/#{{my.tag}}">{{my.titlefull}}</a></li>
+                  </template>
+                  <template if="{{!my.titlefull}}">
+                    <li><a href="http://code.hofi.org/#{{my.tag}}">{{my.title}}</a></li>
+                  </template>
+                </template>
+              </ul>
+            </li>
+            <br/>  
+          </template>
+        </ul>
+      </template>
+    </template>
+
+    <script>
+        Polymer('hofiorg-toc', {
+          ready: function() {
+            this.$['t'].menus = menus;
+          }
+        });
+    </script>
+
+</polymer-element>
