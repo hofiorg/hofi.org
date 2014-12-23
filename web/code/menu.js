@@ -57,7 +57,7 @@
   var menus = [
     {id: 'dartmenu',          label: 'Dart',             sub: dartmenu},
     {id: 'htmlmenu',          label: 'HTML + CSS',       sub: htmlmenu},
-    {id: 'javascriptmenu',    label: 'Javaccript',       sub: javascriptmenu},
+    {id: 'javascriptmenu',    label: 'Javascript',       sub: javascriptmenu},
     {id: 'polymermenu',       label: 'Polymer',          sub: polymermenu},
     {id: 'vorlesung_1',       label: 'Vorlesung WI - 1', sub: vorlesung_1, labelfull:'Vorlesung Wirtschaftsinformatik - 1'},
     {id: 'vorlesung_2',       label: 'Vorlesung WI - 2', sub: vorlesung_2, labelfull:'Vorlesung Wirtschaftsinformatik - 2'},
