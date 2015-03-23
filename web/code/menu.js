@@ -24,23 +24,23 @@
 
   var vorlesung_1 = [
     {label: 'Unterlagen', title: 'Übungsunterlagen',        url: 'vorlesung_1/unterlagen.html', tag:'vorlesung_1_unterlagen'},
-    {label: '16.10.2014', title: 'Vorlesung am 16.10.2014', url: 'vorlesung_1/2014_10_16.html', tag:'vorlesung_1_2014_10_16'},
+    /*{label: '16.10.2014', title: 'Vorlesung am 16.10.2014', url: 'vorlesung_1/2014_10_16.html', tag:'vorlesung_1_2014_10_16'},
     {label: '23.10.2014', title: 'Vorlesung am 23.10.2014', url: 'vorlesung_1/2014_10_23.html', tag:'vorlesung_1_2014_10_23'},
     {label: '30.10.2014', title: 'Vorlesung am 30.10.2014', url: 'vorlesung_1/2014_10_30.html', tag:'vorlesung_1_2014_10_30'},
     {label: '06.11.2014', title: 'Vorlesung am 06.11.2014', url: 'vorlesung_1/2014_11_06.html', tag:'vorlesung_1_2014_11_06'},
     {label: '13.11.2014', title: 'Vorlesung am 13.11.2014', url: 'vorlesung_1/2014_11_13.html', tag:'vorlesung_1_2014_11_13'},
     {label: '27.11.2014', title: 'Vorlesung am 27.11.2014', url: 'vorlesung_1/2014_11_27.html', tag:'vorlesung_1_2014_11_27'},
     {label: '11.12.2014', title: 'Vorlesung am 11.12.2014', url: 'vorlesung_1/2014_12_11.html', tag:'vorlesung_1_2014_12_11'},
-    {label: '18.12.2014', title: 'Vorlesung am 18.12.2014', url: 'vorlesung_1/2014_12_18.html', tag:'vorlesung_1_2014_12_18'},
+    {label: '18.12.2014', title: 'Vorlesung am 18.12.2014', url: 'vorlesung_1/2014_12_18.html', tag:'vorlesung_1_2014_12_18'},*/
   ];    
 
   var vorlesung_2 = [
     {label: 'Unterlagen', title: 'Übungsunterlagen',        url: 'vorlesung_2/unterlagen.html', tag:'vorlesung_2_unterlagen'},
-    {label: '16.10.2014', title: 'Vorlesung am 16.10.2014', url: 'vorlesung_2/2014_10_16.html', tag:'vorlesung_2_2014_10_16'},
+    /*{label: '16.10.2014', title: 'Vorlesung am 16.10.2014', url: 'vorlesung_2/2014_10_16.html', tag:'vorlesung_2_2014_10_16'},
     {label: '30.10.2014', title: 'Vorlesung am 30.10.2014', url: 'vorlesung_2/2014_10_30.html', tag:'vorlesung_2_2014_10_30'},
     {label: '06.11.2014', title: 'Vorlesung am 06.11.2014', url: 'vorlesung_2/2014_11_06.html', tag:'vorlesung_2_2014_11_06'},
     {label: '13.11.2014', title: 'Vorlesung am 13.11.2014', url: 'vorlesung_2/2014_11_13.html', tag:'vorlesung_2_2014_11_13'},
-    {label: '27.11.2014', title: 'Vorlesung am 27.11.2014', url: 'vorlesung_2/2014_11_27.html', tag:'vorlesung_2_2014_11_27'},
+    {label: '27.11.2014', title: 'Vorlesung am 27.11.2014', url: 'vorlesung_2/2014_11_27.html', tag:'vorlesung_2_2014_11_27'},*/
   ];      
 
   var webcomponentsmenu = [
