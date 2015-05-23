@@ -5,7 +5,7 @@
       <paths name="hofi.org">
         <serverdata>
           <mappings>
-            <mapping deploy="/html" local="$PROJECT_DIR$/web" web="/html" />
+            <mapping deploy="/html" local="$PROJECT_DIR$/build/web" web="/html" />
           </mappings>
         </serverdata>
       </paths>
