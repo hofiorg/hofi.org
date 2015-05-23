@@ -11,7 +11,7 @@
 <link rel="import" href="http://www.hofi.org/bower_components/core-icons/core-icons.html">
 <link rel="import" href="http://www.hofi.org/bower_components/core-icons/social-icons.html">
 <link rel="import" href="http://www.hofi.org/bower_components/polymer-github-card/dist/polymer-github-card.html">
-<link rel="import" href="http://www.hofi.org/bower_components/google-youtube/google-youtube.html"></script>
+<!--<link rel="import" href="http://www.hofi.org/bower_components/google-youtube/google-youtube.html"></script>-->
 <link rel="import" href="http://www.hofi.org/code/hofiorg-toc.html">
 
 <polymer-element name="hofi-scaffold" attributes="label responsiveWidth">
@@ -27,7 +27,7 @@
                 <core-toolbar>
                     <div class="core-header">
                       <template if="{{narrow == false}}">
-                        <a style="color: #ffffff;" href="http://code.hofi.org">{{label}}</a>
+                        <a style="color: #ffffff;" href="http://www.hofi.org/code">{{label}}</a>
                       </template>
                       <template if="{{narrow == true}}">
                         {{label}}
@@ -47,9 +47,9 @@
                     <paper-icon-button id="menuButton" icon="menu" on-tap="{{togglePanel}}"></paper-icon-button>
                     <span flex id="title" class="title">{{mytitle}}</span>
                     <template if="{{narrow == false}}">
-                      <a target="_blank" onclick="window.open(this.href,'simplyanewwindow','width=690,height=260,scrollbars,resizable'); return false;" href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fcode.hofi.org{{myroute}}&via=hofiorg&text={{mytitle}}&original_referer="><paper-icon-button class="twitter" icon="social:post-twitter"></paper-icon-button></a>
-                      <a target="_blank" onclick="window.open(this.href,'simplyanewwindow','width=690,height=260,scrollbars,resizable'); return false;" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcode.hofi.org{{myroute}}"><paper-icon-button class="facebook" icon="social:post-facebook"></paper-icon-button></a>
-                      <a target="_blank" onclick="window.open(this.href,'simplyanewwindow','width=690,height=260,scrollbars,resizable'); return false;" href="https://plus.google.com/share?url=http%3A%2F%2Fcode.hofi.org{{myroute}}"><paper-icon-button class="gplus" icon="social:post-gplus"></paper-icon-button></a>
+                      <a target="_blank" onclick="window.open(this.href,'simplyanewwindow','width=690,height=260,scrollbars,resizable'); return false;" href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fhofi.org/code/{{myroute}}&via=hofiorg&text={{mytitle}}&original_referer="><paper-icon-button class="twitter" icon="social:post-twitter"></paper-icon-button></a>
+                      <a target="_blank" onclick="window.open(this.href,'simplyanewwindow','width=690,height=260,scrollbars,resizable'); return false;" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fhofi.org/code/{{myroute}}"><paper-icon-button class="facebook" icon="social:post-facebook"></paper-icon-button></a>
+                      <a target="_blank" onclick="window.open(this.href,'simplyanewwindow','width=690,height=260,scrollbars,resizable'); return false;" href="https://plus.google.com/share?url=http%3A%2F%2Fhofi.org/code{{myroute}}"><paper-icon-button class="gplus" icon="social:post-gplus"></paper-icon-button></a>
                     </template>
 
                 </core-toolbar>
@@ -141,7 +141,7 @@
           this.parseLocationHash();
         }, null, 0);
 
-        this.mytitle = 'code.hofi.org';
+        this.mytitle = 'hofi.org/code';
       },
 
       parseLocationHash: function() {

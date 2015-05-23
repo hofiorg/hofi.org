@@ -4,9 +4,8 @@ hofi.org
 #### Content
 
 Sourcecode for: <br/>
-<code>[hofi.org](http://hofi.org)</code><br/>
-<code>[code.hofi.org](http://code.hofi.org)</code><br/>
-<code>[wi.hofi.org](http://wi.hofi.org)</code><br/>
+<code>[hofi.org](http://www.hofi.org)</code><br/>
+<code>[hofi.org/code](http://www.hofi.org/code)</code><br/>
 
 #### Installation
 

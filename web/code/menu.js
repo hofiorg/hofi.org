@@ -48,8 +48,8 @@
                                         tag:'webcomponents_github_gist',                   titlefull: 'github-gist - Code-Snippets (gists) auf einer Website darstellen'},
     {label: 'google-analytics-tracker', title: 'WebComponents - google-analytics-tracker', url: 'webcomponents/google_analytics_tracker.html',
                                         tag:'webcomponents_google_analytics_tracker',      titlefull:'google-analytics-tracker - Webseiten-Aufrufe mit GoogleAnalytics tracken'},
-    {label: 'google-youtube',           title: 'WebComponents - google-youtube',           url: 'webcomponents/google_youtube.html',
-                                        tag:'webcomponents_google_youtube',                titlefull:'google-youtube - YouTube video playback'},                                        
+    /*{label: 'google-youtube',           title: 'WebComponents - google-youtube',           url: 'webcomponents/google_youtube.html',
+                                        tag:'webcomponents_google_youtube',                titlefull:'google-youtube - YouTube video playback'},    */
     {label: 'polymer-github-card',      title: 'WebComponents - polymer-github-card',      url: 'webcomponents/polymer_github_card.html',
                                         tag:'webcomponents_polymer_github_card',           titlefull:'polymer-github-card - Karte eines GitHub-Profils anzeigen'},                                        
   ];     

@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="hofi.org" />
+  <component name="PublishConfigData" serverName="hofi.org">
+    <serverData>
+      <paths name="hofi.org">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/html" local="$PROJECT_DIR$/web" web="/html" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
 </project>
