@@ -55,7 +55,7 @@
                 </core-toolbar>
                 <div class="content" id="content">
 
-                </div>    
+                </div>
             </core-header-panel>
 
         </core-drawer-panel>
@@ -81,33 +81,33 @@
       menuSelect: function(e, detail) {
 
         if(this.$.menu.selected == 0)
-          document.querySelector('#dartmenu').icon='chevron-right';        
+          document.querySelector('#dartmenu').icon='chevron-right';
         else
-          document.querySelector('#dartmenu').icon='expand-more';        
+          document.querySelector('#dartmenu').icon='expand-more';
         if(this.$.menu.selected == 1)
-          document.querySelector('#htmlmenu').icon='chevron-right';        
+          document.querySelector('#htmlmenu').icon='chevron-right';
         else
-          document.querySelector('#htmlmenu').icon='expand-more';        
+          document.querySelector('#htmlmenu').icon='expand-more';
         if(this.$.menu.selected == 2)
-          document.querySelector('#javascriptmenu').icon='chevron-right';        
+          document.querySelector('#javascriptmenu').icon='chevron-right';
         else
-          document.querySelector('#javascriptmenu').icon='expand-more';        
+          document.querySelector('#javascriptmenu').icon='expand-more';
         if(this.$.menu.selected == 3)
-          document.querySelector('#polymermenu').icon='chevron-right';        
+          document.querySelector('#polymermenu').icon='chevron-right';
         else
-          document.querySelector('#polymermenu').icon='expand-more';              
+          document.querySelector('#polymermenu').icon='expand-more';
         if(this.$.menu.selected == 4)
-          document.querySelector('#vorlesung_1').icon='chevron-right';        
+          document.querySelector('#vorlesung_1').icon='chevron-right';
         else
-          document.querySelector('#vorlesung_1').icon='expand-more';            
+          document.querySelector('#vorlesung_1').icon='expand-more';
         if(this.$.menu.selected == 5)
-          document.querySelector('#vorlesung_2').icon='chevron-right';        
+          document.querySelector('#vorlesung_2').icon='chevron-right';
         else
-          document.querySelector('#vorlesung_2').icon='expand-more';                    
+          document.querySelector('#vorlesung_2').icon='expand-more';
         if(this.$.menu.selected == 6)
-          document.querySelector('#webcomponentsmenu').icon='chevron-right';        
+          document.querySelector('#webcomponentsmenu').icon='chevron-right';
         else
-          document.querySelector('#webcomponentsmenu').icon='expand-more';    
+          document.querySelector('#webcomponentsmenu').icon='expand-more';
 
         if (detail.isSelected) {
           this.item = detail.item;
@@ -141,7 +141,7 @@
           this.parseLocationHash();
         }, null, 0);
 
-        this.mytitle = 'hofi.org/code';
+        this.mytitle = 'hofi.org';
       },
 
       parseLocationHash: function() {
@@ -176,11 +176,11 @@
 
     <script language="javascript" type="text/javascript">
       function resizeIframe(obj) {
-        setTimeout(function() { 
+        setTimeout(function() {
           if(obj.contentWindow != null)
             obj.style.height = (obj.contentWindow.document.body.scrollHeight + 350) + 'px';
         }, 100);
       }
-    </script>    
+    </script>
 
 </polymer-element>
