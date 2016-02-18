@@ -1,0 +1,8 @@
+{
+  "name": "polymer-project",
+  "dependencies": {
+    "iron-flex-layout": "PolymerElements/iron-flex-layout#^1.0.0",
+    "paper-header-panel": "PolymerElements/paper-header-panel#^1.0.0",
+    "paper-toolbar": "PolymerElements/paper-toolbar#^1.0.0"
+  }
+}
