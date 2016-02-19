@@ -1,43 +1,53 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-  <title>hofi.org</title>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>hofi.org</title>
 
-  <link href="http://fonts.googleapis.com/css?family=RobotoDraft:300,400,500" rel="stylesheet"/>
+    <link href="http://fonts.googleapis.com/css?family=RobotoDraft:300,400,500" rel="stylesheet"/>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
-  <meta name="mobile-web-app-capable" content="yes"/>
-  <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
 
-  <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-  <link rel="import" href="bower_components/paper-header-panel/paper-header-panel.html">
-  <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
-  <link rel="import" href="bower_components/iron-flex-layout/classes/iron-flex-layout.html">
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <link rel="import" href="bower_components/paper-header-panel/paper-header-panel.html">
+    <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
+    <link rel="import" href="bower_components/iron-flex-layout/classes/iron-flex-layout.html">
+    <script src="bower_components/jquery/dist/jquery.js" type="text/javascript"></script>
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=3"/>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=4"/>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+
     <style>
-    body {
+      body {
         margin: 0;
         font-family: "RobotoDraft";
         font-weight: 300;
         font-size: 14px;
         color: #333;
-    }
+      }
     </style>
   </head>
-  <body class="fullbleed layout vertical">
+  <body>
     <paper-header-panel class="flex seamed">
       <paper-toolbar>
         <div style="font-size: 18px;">hofi.org</div>
       </paper-toolbar>
-      <div class="horizontal center-justified layout">
-        <div style="margin-top: 2px; margin-left: 0px;margin-right: 0px;">
-            <a class="twitter-timeline" href="https://twitter.com/hofiorg" data-widget-id="700333204968972288" height="550" data-height="550" data-chrome="noborders noscrollbar noheader">Tweets von @hofiorg </a>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-        </div>
-      </div>
     </paper-header-panel>
+
+    <div class="horizontal center-justified layout">
+        <script type="text/javascript">
+          var documentHeight = $(window).height();
+          var heightDiv =  documentHeight - 64; /* pixel for header panel */
+          var h = heightDiv + 10; /* 10 pixel margin bottom in twitter iframe */
+
+          document.write('<div style="margin-top: 0px; margin-left: 0px;margin-right: 0px; height:' + h + 'px">');
+          document.write('<a class="twitter-timeline" href="https://twitter.com/hofiorg" data-chrome="noborders noscrollbar noheader" data-widget-id="700333204968972288" height="' + h + '" data-height="' + h + '"></a>');
+        </script>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </div>
+    </div>
 
     <noscript>
       <h3 style="color: #FF0000">Bitte JavaScript f&uuml;r diese Seite aktivieren! / Please enable JavaScript for this site!</h3>
