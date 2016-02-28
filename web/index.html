@@ -9,8 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
     <meta name="mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="twitter:widgets:new-embed-design" content="on">
     
-    <meta name="theme-color" content="#3f51b5">
+    <meta name="theme-color" content="#4285f4">
 
     <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
     <link rel="import" href="bower_components/paper-header-panel/paper-header-panel.html">
@@ -47,14 +48,18 @@
         --paper-fab-keyboard-focus-background: #db4437;
       }
       paper-toolbar {
+        --paper-toolbar-background: #4285f4;
         --paper-toolbar-height: 56px;
+        --paper-toolbar: {
+          font-size: 18px;
+        };
       }
     </style>
   </head>
   <body>
     <paper-header-panel class="flex seamed">
       <paper-toolbar>
-        <div style="font-size: 18px;">hofi.org</div>
+        <div>hofi.org</div>
       </paper-toolbar>
     </paper-header-panel>
     <div style="position: absolute; right: 16px; bottom: 25px;">
@@ -66,7 +71,7 @@
           var h =  documentHeight - 56; /* 56 pixel for header panel */
 
           document.write('<div style="overflow: hidden; margin-top: 0px; margin-left: 0px;margin-right: 0px; margin-bottom:0px; height:' + h + 'px">');
-          document.write('<a class="twitter-timeline" href="https://twitter.com/hofiorg" data-chrome="noborders noscrollbar noheader nofooter" data-lang="de" data-widget-id="700333204968972288" height="' + h + '" data-height="' + h + '"></a>');
+          document.write('<a class="twitter-timeline" href="https://twitter.com/hofiorg" data-chrome="noborders noheader nofooter" data-lang="de" data-widget-id="700333204968972288" height="' + h + '" data-height="' + h + '"></a>');
         </script>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
       </div>
