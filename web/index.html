@@ -70,8 +70,13 @@
           var documentHeight = $(window).height();
           var h =  documentHeight - 56; /* 56 pixel for header panel */
 
-          document.write('<div style="overflow: hidden; margin-top: 0px; margin-left: 0px;margin-right: 0px; margin-bottom:0px; height:' + h + 'px">');
-          document.write('<a class="twitter-timeline" href="https://twitter.com/hofiorg" data-chrome="noborders noheader nofooter" data-lang="de" data-widget-id="700333204968972288" height="' + h + '" data-height="' + h + '"></a>');
+          $(window).resize(function() {
+            $('#content').height($(window).height() - 56);
+            $('#twitter-widget-0').height($(window).height() - 56);
+          });
+
+          document.write('<div id="content" style="overflow: hidden; margin-top: 0px; margin-left: 0px;margin-right: 0px; margin-bottom:0px; height:' + h + 'px">');
+          document.write('<a class="twitter-timeline" href="https://twitter.com/hofiorg" data-chrome="noborders noheader nofooter" data-lang="de" data-widget-id="700333204968972288" height="' + h + '"></a>');
         </script>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
       </div>
