@@ -10,7 +10,7 @@
     <meta name="mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="twitter:widgets:new-embed-design" content="on">
-    
+
     <meta name="theme-color" content="#4285f4">
 
     <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
@@ -67,16 +67,15 @@
     </div>
     <div class="horizontal center-justified layout">
         <script type="text/javascript">
-          var documentHeight = $(window).height();
-          var h =  documentHeight - 56; /* 56 pixel for header panel */
+          var h = $(window).height() - 56; /* 56 pixel for header panel */
 
           $(window).resize(function() {
-            $('#content').height($(window).height() - 56);
-            $('#twitter-widget-0').height($(window).height() - 56);
+            var h = $(window).height() - 56; /* 56 pixel for header panel */
+            $('#content').height(h);
+            $('#twitter-widget-0').height(h + 4);
           });
-
           document.write('<div id="content" style="overflow: hidden; margin-top: 0px; margin-left: 0px;margin-right: 0px; margin-bottom:0px; height:' + h + 'px">');
-          document.write('<a class="twitter-timeline" href="https://twitter.com/hofiorg" data-chrome="noborders noheader nofooter" data-lang="de" data-widget-id="700333204968972288" height="' + h + '"></a>');
+          document.write('<a class="twitter-timeline" href="https://twitter.com/hofiorg" data-chrome="noborders noheader nofooter" data-lang="de" data-widget-id="700333204968972288" height="' + (h + 4) + '"></a>');
         </script>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
       </div>
