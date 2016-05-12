@@ -13,7 +13,7 @@ import java.util.*;
 
 public class ArticleGenerator {
 
-  private final static String BASEDIR = "..\\web\\article\\" + File.separator;
+  private final static String BASEDIR = ".." + File.separator + "web" + File.separator + "article" + File.separator;
 
   public static void main(String[] args) throws IOException, ParseException {
     new ArticleGenerator();
@@ -48,21 +48,15 @@ public class ArticleGenerator {
     String title = extractTitle(filepath);
     String body = readFile(filepath, StandardCharsets.UTF_8);
 
-    // System.out.println("date: " + date);
-    // System.out.println("category: " + category);
-    // System.out.println("title: " + title);
-    // System.out.println("body: " + body);
-
     template = template.replaceAll("\\$article_category", "&gt; " + replaceDashes(category));
     template = template.replaceAll("\\$article_title", replaceDashes(title));
     template = template.replaceAll("\\$article_date", convertDate(date));
     template = template.replaceAll("\\$article_body", body);
-    //template = template.replaceAll("http://www.hofi.org", "");
 
     template = replaceUmlaute(template);
 
     String outputFilename = date + File.separator + category;
-    createDir(outputFilename);
+    createDirBasedir(outputFilename);
     writeFile(createFilename(outputFilename, title), template);
   }
 
@@ -166,14 +160,18 @@ public class ArticleGenerator {
     return BASEDIR + title + ".html";
   }
 
-  private boolean createDir(String dir) throws IOException {
+  private boolean createDirBasedir(String dir) throws IOException {
+    // System.out.println("Verz. werden erstellt: " + BASEDIR + dir);
     return new File(BASEDIR + dir).mkdirs();
   }
 
+  private boolean createDir(String dir) throws IOException {
+    // System.out.println("Verz. werden erstellt: " + dir);
+    return new File(dir).mkdirs();
+  }
+
   private void copyFile(String filename) throws IOException {
-
-    String destFilename = filename.replace("articles/", BASEDIR);
-
+    String destFilename = filename.replace("articles" + File.separator, BASEDIR);
     System.out.println("Datei wurde kopiert: " + filename + " >> " + destFilename);
     createDir(Paths.get(destFilename).getParent().toString());
 
