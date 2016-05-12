@@ -172,8 +172,12 @@ public class ArticleGenerator {
 
   private void copyFile(String filename) throws IOException {
 
-    System.out.println("copyFile: " + filename + " >> " + filename.replace("articles/", BASEDIR));
-    Files.copy(Paths.get(filename), Paths.get(filename.replace("articles\\", BASEDIR)), StandardCopyOption.REPLACE_EXISTING);
+    String destFilename = filename.replace("articles/", BASEDIR);
+
+    System.out.println("Datei wurde kopiert: " + filename + " >> " + destFilename);
+    createDir(Paths.get(destFilename).getParent().toString());
+
+    Files.copy(Paths.get(filename), Paths.get(destFilename), StandardCopyOption.REPLACE_EXISTING);
   }
 
   private void writeFile(String filename, String content) throws FileNotFoundException {
