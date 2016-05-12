@@ -40,6 +40,7 @@ public class ArticleGenerator {
     });
     java.util.Collections.reverse(files);
     generateInhaltsverz(files, template);
+    generateKategorie(files, template);
   }
 
   private void generateArticle(String filepath, String template) throws IOException, ParseException  {
@@ -60,7 +61,7 @@ public class ArticleGenerator {
     writeFile(createFilename(outputFilename, title), template);
   }
 
-  private void generateInhaltsverz(List<String> files, String template) throws IOException, ParseException  {
+  private void generateInhaltsverz(List<String> files, String template) throws IOException, ParseException {
 
     template = template.replaceAll("\\$article_category", "");
     template = template.replaceAll("\\$article_title", "Inhalt");
@@ -90,8 +91,6 @@ public class ArticleGenerator {
       body += "<ul>";
       for(String value : map.get(key)) {
         body += "<li><a href=\"" + convertDateBack(key) + "/" + replaceSpaces(value.split("-")[0].trim()) + "/" + replaceSpaces(value.split("-")[1].trim()) + ".html\">" + value + "</a></li>";
-
-
       }
       body += "</li>";
       body += "</ul>";
@@ -102,6 +101,42 @@ public class ArticleGenerator {
     template = replaceUmlaute(template);
 
     writeFile(createFilename("index"), template);
+  }
+
+  private void generateKategorie(List<String> files, String template) throws IOException, ParseException {
+
+    System.out.println("");
+    for(String file : files) {
+      System.out.println("file: " + file);
+    }
+
+    Map<String, List<String>> map = new LinkedHashMap<>();
+
+    for (String file: files) {
+      //String datum = convertDate(extractDate(file));
+      String category = replaceDashes(extractCategory(file));
+      String title = replaceDashes(extractTitle(file));
+
+      if(map.containsKey(category)) {
+        map.get(category).add(title);
+      }
+      else {
+        List<String> list = new ArrayList<>();
+        list.add(title);
+        map.put(category, list);
+      }
+    }
+
+    for(String key : map.keySet()) {
+      System.out.println("key: " + key);
+      List<String> list = map.get(key);
+      java.util.Collections.sort(list);
+      for(String value : list) {
+        System.out.println("  value: " + value);
+      }
+    }
+
+    // TODO: Datei pro Kategorie schreiben
   }
 
   private String replaceUmlaute(String template) {
