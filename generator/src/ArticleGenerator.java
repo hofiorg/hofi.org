@@ -1,5 +1,4 @@
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.charset.Charset;
@@ -49,25 +48,15 @@ public class ArticleGenerator {
     String title = extractTitle(filepath);
     String body = readFile(filepath, StandardCharsets.UTF_8);
 
-    template = template.replaceAll("\\$article_category", "&gt; " + replaceDashes(category));
-    template = template.replaceAll("\\$article_title", replaceDashes(title));
-    template = template.replaceAll("\\$article_date", convertDate(date));
-    template = template.replaceAll("\\$article_body", body);
+    template = modifyTemplate(template, replaceDashes(category), " &gt; ", replaceDashes(title), convertDate(date), body);
 
     template = replaceUmlaute(template);
 
     String outputFilename = date + File.separator + category;
-    createDirBasedir(outputFilename);
     writeFile(createFilename(outputFilename, title), template);
   }
 
-  private void generateInhaltsverz(List<String> files, String template) throws IOException, ParseException {
-
-    template = template.replaceAll("\\$article_category", "");
-    template = template.replaceAll("\\$article_title", "Inhalt");
-    template = template.replaceAll("\\$article_date", "");
-
-    String body = "";
+  private Map<String, List<String>> createInhaltsverzMap(List<String> files) throws ParseException{
     Map<String, List<String>> map = new LinkedHashMap<>();
 
     for (String file: files) {
@@ -84,59 +73,112 @@ public class ArticleGenerator {
         map.put(datum, list);
       }
     }
+    return map;
+  }
 
+  private List<String> createKategorieList(List<String> files) {
+    Set<String> set = new HashSet<>();
+    for (String file: files) {
+      String category = replaceDashes(extractCategory(file));
+      set.add(category);
+    }
+    return asSortedList(set);
+  }
+
+  private void generateInhaltsverz(List<String> files, String template) throws IOException, ParseException {
+    String body = "";
+
+    Map<String, List<String>> map = createInhaltsverzMap(files);
     body += "<ul>";
     for(String key : map.keySet()) {
       body += "<li>" + key;
       body += "<ul>";
       for(String value : map.get(key)) {
-        body += "<li><a href=\"" + convertDateBack(key) + "/" + replaceSpaces(value.split("-")[0].trim()) + "/" + replaceSpaces(value.split("-")[1].trim()) + ".html\">" + value + "</a></li>";
+
+        String[] split = value.split("-");
+
+        String value1 = replaceSpaces(split[0].trim());
+        String value2 = replaceSpaces(value.substring(value.indexOf("-")+1).trim());
+        body += "<li><a href=\"" + convertDateBack(key) + "/" + value1 + "/" + value2 + ".html\">" + value + "</a></li>";
       }
       body += "</li>";
       body += "</ul>";
     }
     body += "</ul>";
-    template = template.replaceAll("\\$article_body", body);
 
+    body += "<br/>";
+    body += "<h4>Kategorien</h4>";
+    body += "<ul>";
+    for(String category : createKategorieList(files)) {
+      body += "<li><a href=\"./category/" + category + "/index.html\">" + category + "</a></li>";
+    }
+    body += "</ul>";
+
+    template = modifyTemplate(template, "", "", "Inhalt", "", body);
     template = replaceUmlaute(template);
 
     writeFile(createFilename("index"), template);
   }
 
-  private void generateKategorie(List<String> files, String template) throws IOException, ParseException {
+  private static <T extends Comparable<? super T>> List<T> asSortedList(Collection<T> c) {
+    List<T> list = new ArrayList<>(c);
+    Collections.sort(list);
+    return list;
+  }
 
-    System.out.println("");
-    for(String file : files) {
-      System.out.println("file: " + file);
-    }
+  private String modifyTemplate(String template, String category, String breadcrumb_sep1, String title, String date, String body) {
+    String result = template;
+    result = result.replaceAll("\\$article_category", category);
+    result = result.replaceAll("\\$article_breadcrumb_sep1", breadcrumb_sep1);
+    result = result.replaceAll("\\$article_title", title);
+    result = result.replaceAll("\\$article_date", date);
+    result = result.replaceAll("\\$article_body", body);
+    return result;
+  }
 
+  private Map<String, List<String>> createKategorieMap(List<String> files) throws ParseException{
     Map<String, List<String>> map = new LinkedHashMap<>();
 
     for (String file: files) {
-      //String datum = convertDate(extractDate(file));
+      String datum = convertDate(extractDate(file));
       String category = replaceDashes(extractCategory(file));
       String title = replaceDashes(extractTitle(file));
 
       if(map.containsKey(category)) {
-        map.get(category).add(title);
+        map.get(category).add(datum + "-" + title);
       }
       else {
         List<String> list = new ArrayList<>();
-        list.add(title);
+        list.add(datum + "-" + title);
         map.put(category, list);
       }
     }
+    return map;
+  }
 
-    for(String key : map.keySet()) {
-      System.out.println("key: " + key);
-      List<String> list = map.get(key);
+  private void generateKategorie(List<String> files, String template) throws IOException, ParseException {
+    Map<String, List<String>> map = createKategorieMap(files);
+
+    for(String category : map.keySet()) {
+
+      List<String> list = map.get(category);
       java.util.Collections.sort(list);
-      for(String value : list) {
-        System.out.println("  value: " + value);
-      }
-    }
 
-    // TODO: Datei pro Kategorie schreiben
+      String body = "";
+      body += "<ul>";
+
+      for(String value : list) {
+        String[] split = value.split("-");
+        String datum = replaceSpaces(split[0].trim());
+        String title = replaceSpaces(value.substring(value.indexOf("-")+1).trim());
+        body += "<li><a href=\"../../" + convertDateBack(datum) + "/" + category + "/" + replaceSpaces(title) + ".html\">" + replaceDashes(title) + "</a></li>";
+      }
+      body += "</ul>";
+
+      String myTemplate = modifyTemplate(template, "", "", category, "", body);
+
+      writeFile(createFilename("category", category, "index"), myTemplate);
+    }
   }
 
   private String replaceUmlaute(String template) {
@@ -152,33 +194,43 @@ public class ArticleGenerator {
   private String replaceDashes(String value) {
     return value.replaceAll("_", " ");
   }
+
   private String replaceSpaces(String value) {
     return value.replaceAll(" ", "_");
   }
 
+  private static final String ESCAPE_CHAR = "\\";
+
+  private String splitBySeparator(String value, int i) {
+    return value.split(ESCAPE_CHAR + File.separator)[i];
+  }
+
   private String extractDate(String filepath) {
-    return filepath.split("\\" + File.separator)[1];
+    return splitBySeparator(filepath, 1);
   }
 
   private String extractCategory(String filepath) {
-    return filepath.split("\\" + File.separator)[2];
+    return splitBySeparator(filepath, 2);
   }
 
   private String extractTitle(String filepath) {
-    return filepath.split("\\" + File.separator)[3].split("\\.")[0];
+    return splitBySeparator(filepath, 3).split("\\.")[0];
   }
 
+  private final static String DATE_US     = "yyyy-MM-dd";
+  private final static String DATE_GERMAN = "dd.MM.yyyy";
+
   private String convertDate(String dateToConvert) throws ParseException {
-    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+    SimpleDateFormat sdf = new SimpleDateFormat(DATE_US);
     Date date = sdf.parse(dateToConvert);
-    SimpleDateFormat sdf2 = new SimpleDateFormat("dd.MM.yyyy");
+    SimpleDateFormat sdf2 = new SimpleDateFormat(DATE_GERMAN);
     return sdf2.format(date);
   }
 
   private String convertDateBack(String dateToConvert) throws ParseException {
-    SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+    SimpleDateFormat sdf = new SimpleDateFormat(DATE_GERMAN);
     Date date = sdf.parse(dateToConvert);
-    SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd");
+    SimpleDateFormat sdf2 = new SimpleDateFormat(DATE_US);
     return sdf2.format(date);
   }
 
@@ -187,17 +239,16 @@ public class ArticleGenerator {
     return new String(encoded, encoding);
   }
 
-  private String createFilename(String date, String title) {
-    return BASEDIR + date + File.separator + title + ".html";
-  }
+  private String createFilename(String... directory) throws IOException {
+    String result = "";
+    boolean first = true;
 
-  private String createFilename(String title) {
-    return BASEDIR + title + ".html";
-  }
+    for (String value : directory) {
+      result += (first ? "" : File.separator) + value;
+      first = false;
+    }
 
-  private boolean createDirBasedir(String dir) throws IOException {
-    // System.out.println("Verz. werden erstellt: " + BASEDIR + dir);
-    return new File(BASEDIR + dir).mkdirs();
+    return BASEDIR + result + ".html";
   }
 
   private boolean createDir(String dir) throws IOException {
@@ -213,7 +264,11 @@ public class ArticleGenerator {
     Files.copy(Paths.get(filename), Paths.get(destFilename), StandardCopyOption.REPLACE_EXISTING);
   }
 
-  private void writeFile(String filename, String content) throws FileNotFoundException {
+  private void writeFile(String filename, String content) throws IOException {
+
+    String dir = filename.substring(0, filename.lastIndexOf(File.separator));
+    createDir(dir);
+
     System.out.println("Datei wird erstellt: " + filename);
     PrintWriter out = null;
     try {
