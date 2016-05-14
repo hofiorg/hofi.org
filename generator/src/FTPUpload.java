@@ -9,12 +9,6 @@ public class FTPUpload {
 
 
   public static void main(String[] args) {
-
-    System.setProperty("http.proxyHost", "proxy.elaxy.org");
-    System.setProperty("http.proxyPort", "3128");
-    System.setProperty("https.proxyHost", "proxy.elaxy.org");
-    System.setProperty("https.proxyPort", "3128");
-
     new FTPUpload().upload();
   }
 
