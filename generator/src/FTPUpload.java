@@ -1,3 +1,4 @@
+import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPFile;
 
@@ -48,6 +49,12 @@ public class FTPUpload {
           if (Files.isRegularFile(filePath)) {
             // file
             fis = new FileInputStream(filePath.toString());
+
+            if(filePath.toString().endsWith("png"))
+              client.setFileType(FTP.BINARY_FILE_TYPE);
+            else
+              client.setFileType(FTP.ASCII_FILE_TYPE);
+
             client.storeFile(newName, fis);
 
           } else {
