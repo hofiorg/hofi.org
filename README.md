@@ -31,8 +31,8 @@ Sourcecode for: <br/>
 
 * jquery
 * polymer (https://www.polymer-project.org)
-    * core-elements
-    * paper-elements
+    * iron-elements (https://elements.polymer-project.org/browse?package=iron-elements)
+    * paper-elements (https://elements.polymer-project.org/browse?package=paper-elements)
 
 #### Contributing
 Any suggestions, improvements or issues are welcome :)
