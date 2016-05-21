@@ -29,7 +29,7 @@ Sourcecode for: <br/>
 
 #### Used Components
 
-* jquery
+* jquery (https://jquery.com)
 * polymer (https://www.polymer-project.org)
     * iron-elements (https://elements.polymer-project.org/browse?package=iron-elements)
     * paper-elements (https://elements.polymer-project.org/browse?package=paper-elements)
