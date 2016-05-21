@@ -13,7 +13,7 @@ Install bower (see http://bower.io/)
 
 <code>npm install -g bower</code><br/>
 
-Install vulcanize (see https://github.com/Polymer/vulcanize)
+Install vulcanize (see https://github.com/Polymer/vulcanize)<br/>
 <code>npm install -g vulcanize</code><br/>
 
 ##### Install hofi.org
