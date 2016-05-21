@@ -27,7 +27,7 @@ Sourcecode for: <br/>
 <code>cd web</code><br/>
 <code>python -m SimpleHTTPServer 8000</code><br/>
 
-#### Used WebComponents
+#### Used Web Components
 
 * jquery (https://jquery.com)
 * polymer (https://www.polymer-project.org)
