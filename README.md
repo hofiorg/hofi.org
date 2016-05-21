@@ -8,15 +8,20 @@ Sourcecode for: <br/>
 
 #### Installation
 
+Install npm (see https://nodejs.org/)
+Install bower (see http://bower.io/)
+
+<code>npm install -g bower</code><br/>
+
+Install vulcanize (see https://github.com/Polymer/vulcanize)
+<code>npm install -g vulcanize</code><br/>
+
+##### Install hofi.org
+
 <code>git clone https://github.com/hofiorg/hofi.org.git</code><br/>
 <code>cd hofi.org</code><br/>
-
-##### Install Polymer Components / jQuery
-
-The recommended way to install the used WebComponents is through Bower:<br/>
-[Bower - A package manager for the web (bower.io)](http://www.bower.io/)
-
-<code>bower install</code><br/>
+<code>cd scripts</code><br/>
+<code>./dist.sh</code><br/>
 
 ##### Start Local Server
 
@@ -25,14 +30,10 @@ The recommended way to install the used WebComponents is through Bower:<br/>
 
 #### Used Components
 
-* [github-gist](https://github.com/dmaslov/github-gist) by [@dmaslov](https://github.com/dmaslov)
-* [google-analytics-tracker](https://github.com/erikringsmuth/google-analytics-tracker) by [@erikringsmuth](https://github.com/erikringsmuth)
-* [google-youtube](https://github.com/GoogleWebComponents/google-youtube) by [@ebidel](https://github.com/ebidel)
 * jquery
-* polymer
+* polymer (https://www.polymer-project.org)
     * core-elements
     * paper-elements
-* [polymer-github-card](https://github.com/iamolivinius/polymer-github-card) by [@iamolivinius](https://github.com/iamolivinius)
 
 #### Contributing
 Any suggestions, improvements or issues are welcome :)
