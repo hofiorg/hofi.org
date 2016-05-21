@@ -8,7 +8,7 @@ Sourcecode for: <br/>
 
 #### Installation
 
-Install npm (see https://nodejs.org/)
+Install npm (see https://nodejs.org/)<br/>
 Install bower (see http://bower.io/)
 
 <code>npm install -g bower</code><br/>
@@ -23,7 +23,7 @@ Install vulcanize (see https://github.com/Polymer/vulcanize)
 <code>cd scripts</code><br/>
 <code>./dist.sh</code><br/>
 
-##### Start Local Server
+##### Start local server
 
 <code>cd web</code><br/>
 <code>python -m SimpleHTTPServer 8000</code><br/>
