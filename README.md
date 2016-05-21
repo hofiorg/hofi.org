@@ -8,8 +8,11 @@ Sourcecode for: <br/>
 
 #### Installation
 
-##### Install npm (see https://nodejs.org/)
-##### Install bower (see http://bower.io/)
+##### Install npm
+see https://nodejs.org/
+
+##### Install bower
+see http://bower.io/
 
 <code>npm install -g bower</code><br/>
 
