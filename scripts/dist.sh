@@ -1,7 +1,5 @@
 #!/bin/sh
 
-cd ..
-
 # remove old installation
 rm -rf bower_components
 rm -rf web/bower_components
