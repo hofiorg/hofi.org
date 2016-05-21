@@ -8,12 +8,12 @@ Sourcecode for: <br/>
 
 #### Installation
 
-Install npm (see https://nodejs.org/)<br/>
-Install bower (see http://bower.io/)
+##### Install npm (see https://nodejs.org/)
+##### Install bower (see http://bower.io/)
 
 <code>npm install -g bower</code><br/>
 
-Install vulcanize (see https://github.com/Polymer/vulcanize)<br/>
+##### Install vulcanize (see https://github.com/Polymer/vulcanize)
 <code>npm install -g vulcanize</code><br/>
 
 ##### Install hofi.org
