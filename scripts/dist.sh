@@ -11,6 +11,7 @@ bower install
 # copy jquery to web
 mkdir web/bower_components
 cp -R bower_components/jquery web/bower_components/jquery
+cp -R bower_components/webcomponentsjs web/bower_components/webcomponentsjs
 
 # vulcanize for production
 mkdir web/vulcanized
