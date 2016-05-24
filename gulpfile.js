@@ -5,7 +5,10 @@ var gulp = require('gulp'),
     reload = browserSync.reload,
     del = require('del'),
     bower = require('gulp-bower'),
-    vulcanize = require('gulp-vulcanize');
+    vulcanize = require('gulp-vulcanize'),
+    gutil = require('gulp-util'),
+    ftp = require('vinyl-ftp'),
+    fs = require('fs');
 
 gulp.task('generate-articles', function(cb) {
   runSequence('compile-articles',
@@ -78,10 +81,23 @@ gulp.task('vulcanize', function () {
     .pipe(gulp.dest('web/vulcanized'));
 });
 
-gulp.task('dist', function () {
+gulp.task('deploy', function () {
 
-  // TODO: dist
-  // - https://github.com/morris/vinyl-ftp
+  var json = JSON.parse(fs.readFileSync('ftp.json'));
+  var conn = ftp.create({
+    host:     json.host,
+    user:     json.user,
+    password: json.password,
+    parallel: 10,
+    log:      gutil.log
+  });
 
+  var globs = [
+    'web/**'
+  ];
+
+  return gulp.src(globs, { base: 'web', buffer: false })
+           .pipe(conn.newer('/html'))
+           .pipe(conn.dest('/html'));
 });
 
