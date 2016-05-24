@@ -17,6 +17,7 @@ Sourcecode for: <br/>
 
 <code>git clone https://github.com/hofiorg/hofi.org.git</code><br/>
 <code>cd hofi.org</code><br/>
+<code>npm install</code><br/>
 <code>gulp install</code><br/>
 
 ##### Start local server
