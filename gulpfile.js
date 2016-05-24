@@ -1,6 +1,8 @@
 var gulp = require('gulp'),
     exec = require('child_process').exec,
-    runSequence = require('run-sequence');
+    runSequence = require('run-sequence'),
+    browserSync = require('browser-sync'),
+    reload = browserSync.reload;
 
 gulp.task('watch', function() {
   gulp.watch('generator/articles/**/*.html', ['generate-articles']);
@@ -27,4 +29,13 @@ gulp.task('run-articles-generator', function(cb) {
     console.log(stderr);
     cb(err);
   });
+});
+
+gulp.task('serve', function() {
+  browserSync({
+    server: {
+      baseDir: 'web'
+    }
+  });
+  gulp.watch(['**/*.html', 'css/**/*.css'], {cwd: 'web'}, reload);
 });

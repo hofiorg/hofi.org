@@ -13,6 +13,7 @@
   },
   "homepage": "https://github.com/hofiorg/hofi.org#readme",
   "devDependencies": {
+    "browser-sync": "^2.12.8",
     "gulp": "^3.9.1",
     "run-sequence": "^1.2.1"
   }
