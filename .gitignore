@@ -2,3 +2,5 @@
 **/vulcanized/**
 **/generator/src/ftp.properties
 **/bower_components
+**/node_modules
+**/libs

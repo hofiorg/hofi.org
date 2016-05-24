@@ -12,24 +12,26 @@ import java.util.*;
 
 public class ArticleGenerator {
 
-  private final static String BASEDIR = ".." + File.separator + "web" + File.separator + "article" + File.separator;
+  private final static String BASEDIR = "web" + File.separator + "article" + File.separator;
+  private final static String GEN_DIR = "generator" + File.separator;
 
   public static void main(String[] args) throws IOException, ParseException {
     new ArticleGenerator();
   }
 
   private ArticleGenerator() throws IOException, ParseException {
-    String template = readFile("template/index.html", StandardCharsets.UTF_8);
+    String template = readFile(GEN_DIR + "template/index.html", StandardCharsets.UTF_8);
 
     List<String> files = new ArrayList<>();
-    Files.walk(Paths.get("articles")).forEach(filePath -> {
+    Files.walk(Paths.get(GEN_DIR + "articles")).forEach(filePath -> {
       try {
+        String fp = filePath.toString().replaceAll("generator\\" + File.separator, "");
         if (Files.isRegularFile(filePath) && filePath.toString().endsWith(".html")) {
-          generateArticle(filePath.toString(), template);
-          files.add(filePath.toString());
+          generateArticle(fp, template);
+          files.add(fp);
         } else {
           if(Files.isRegularFile(filePath)) {
-            copyFile(filePath.toString());
+            copyFile(fp);
           }
         }
       }
@@ -46,7 +48,7 @@ public class ArticleGenerator {
     String date = extractDate(filepath);
     String category = extractCategory(filepath);
     String title = extractTitle(filepath);
-    String body = readFile(filepath, StandardCharsets.UTF_8);
+    String body = readFile(GEN_DIR + filepath, StandardCharsets.UTF_8);
 
     template = modifyTemplate(template, replaceDashes(category), " &gt; ", replaceDashes(title), convertDate(date), body);
 
@@ -262,7 +264,7 @@ public class ArticleGenerator {
     System.out.println("Datei wurde kopiert: " + filename + " >> " + destFilename);
     createDir(Paths.get(destFilename).getParent().toString());
 
-    Files.copy(Paths.get(filename), Paths.get(destFilename), StandardCopyOption.REPLACE_EXISTING);
+    Files.copy(Paths.get(GEN_DIR + filename), Paths.get(destFilename), StandardCopyOption.REPLACE_EXISTING);
   }
 
   private void writeFile(String filename, String content) throws IOException {

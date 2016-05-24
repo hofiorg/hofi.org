@@ -1,0 +1,19 @@
+{
+  "name": "hofi.org",
+  "version": "0.0.5",
+  "description": "Sourcecode for hofi.org",
+  "author": "Christian Hofmann <hofiorg@googlemail.com> (https://github.com/hofiorg)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hofiorg/hofi.org.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hofiorg/hofi.org/issues"
+  },
+  "homepage": "https://github.com/hofiorg/hofi.org#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "run-sequence": "^1.2.1"
+  }
+}
