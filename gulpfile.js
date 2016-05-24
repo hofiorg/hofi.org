@@ -81,16 +81,27 @@ gulp.task('vulcanize', function () {
     .pipe(gulp.dest('web/vulcanized'));
 });
 
-gulp.task('deploy', function () {
-
+function createFTPConnection() {
   var json = JSON.parse(fs.readFileSync('ftp.json'));
-  var conn = ftp.create({
+  return ftp.create({
     host:     json.host,
     user:     json.user,
     password: json.password,
     parallel: 10,
     log:      gutil.log
   });
+}
+
+gulp.task('ftp-cleanup', function (cb) {
+  var conn = createFTPConnection();
+  function cbRmdir(err) {
+    cb();
+  }
+  conn.rmdir('html', cbRmdir);
+});
+
+gulp.task('deploy', ['ftp-cleanup'],  function () {
+  var conn = createFTPConnection()
 
   var globs = [
     'web/**'
