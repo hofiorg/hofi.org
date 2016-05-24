@@ -133,6 +133,7 @@ public class ArticleGenerator {
     result = result.replaceAll("\\$article_title", title);
     result = result.replaceAll("\\$article_date", date);
     result = result.replaceAll("\\$article_body", body);
+    result = result.replaceAll("http://www\\.hofi\\.org", "");
     return result;
   }
 

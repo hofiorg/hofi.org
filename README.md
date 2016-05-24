@@ -8,31 +8,35 @@ Sourcecode for: <br/>
 
 #### Installation
 
+##### Install npm (https://nodejs.org/)
+##### Install bower (http://bower.io/)
+
+<code>npm install -g bower</code><br/>
+
+##### Install vulcanize (https://github.com/Polymer/vulcanize)
+<code>npm install -g vulcanize</code><br/>
+
+##### Install hofi.org
+
 <code>git clone https://github.com/hofiorg/hofi.org.git</code><br/>
 <code>cd hofi.org</code><br/>
+<code>scripts/dist.sh</code><br/>
 
-##### Install Polymer Components / jQuery
-
-The recommended way to install the used WebComponents is through Bower:<br/>
-[Bower - A package manager for the web (bower.io)](http://www.bower.io/)
-
-<code>bower install</code><br/>
-
-##### Start Local Server
+##### Start local server
 
 <code>cd web</code><br/>
 <code>python -m SimpleHTTPServer 8000</code><br/>
 
-#### Used Components
+#### Used Web Components
 
-* [github-gist](https://github.com/dmaslov/github-gist) by [@dmaslov](https://github.com/dmaslov)
-* [google-analytics-tracker](https://github.com/erikringsmuth/google-analytics-tracker) by [@erikringsmuth](https://github.com/erikringsmuth)
-* [google-youtube](https://github.com/GoogleWebComponents/google-youtube) by [@ebidel](https://github.com/ebidel)
-* jquery
-* polymer
-    * core-elements
-    * paper-elements
-* [polymer-github-card](https://github.com/iamolivinius/polymer-github-card) by [@iamolivinius](https://github.com/iamolivinius)
+* jquery (https://jquery.com)
+* polymer (https://www.polymer-project.org)
+    * iron-elements (https://elements.polymer-project.org/browse?package=iron-elements)
+    * paper-elements (https://elements.polymer-project.org/browse?package=paper-elements)
+
+#### Used Java library
+
+* Apache Commons Net (https://commons.apache.org/proper/commons-net/)
 
 #### Contributing
 Any suggestions, improvements or issues are welcome :)
