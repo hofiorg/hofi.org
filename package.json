@@ -14,7 +14,10 @@
   "homepage": "https://github.com/hofiorg/hofi.org#readme",
   "devDependencies": {
     "browser-sync": "^2.12.8",
+    "del": "^2.2.0",
     "gulp": "^3.9.1",
+    "gulp-bower": "0.0.13",
+    "gulp-vulcanize": "^6.1.0",
     "run-sequence": "^1.2.1"
   }
 }

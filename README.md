@@ -10,22 +10,18 @@ Sourcecode for: <br/>
 
 ##### Install npm (https://nodejs.org/)
 ##### Install bower (http://bower.io/)
-
-<code>npm install -g bower</code><br/>
-
 ##### Install vulcanize (https://github.com/Polymer/vulcanize)
-<code>npm install -g vulcanize</code><br/>
+##### Install gulp (http://gulpjs.com/)
 
 ##### Install hofi.org
 
 <code>git clone https://github.com/hofiorg/hofi.org.git</code><br/>
 <code>cd hofi.org</code><br/>
-<code>scripts/dist.sh</code><br/>
+<code>gulp install</code><br/>
 
 ##### Start local server
 
-<code>cd web</code><br/>
-<code>python -m SimpleHTTPServer 8000</code><br/>
+<code>gulp serve</code><br/>
 
 #### Used Web Components
 
