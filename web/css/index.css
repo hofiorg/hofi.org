@@ -1,0 +1,9 @@
+  body {
+    margin: 0;
+    font-family: "RobotoDraft";
+    font-weight: 300;
+  }
+
+  div.mytitle {
+    font-weight: 500;
+  }
