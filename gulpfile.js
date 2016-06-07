@@ -97,7 +97,7 @@ gulp.task('ftp-cleanup', function (cb) {
   function cbRmdir(err) {
     cb();
   }
-  conn.rmdir('html', cbRmdir);
+  conn.rmdir('/', cbRmdir);
 });
 
 gulp.task('deploy', ['ftp-cleanup'],  function () {
@@ -108,7 +108,7 @@ gulp.task('deploy', ['ftp-cleanup'],  function () {
   ];
 
   return gulp.src(globs, { base: 'web', buffer: false })
-           .pipe(conn.newer('/html'))
-           .pipe(conn.dest('/html'));
+           .pipe(conn.newer('/'))
+           .pipe(conn.dest('/'));
 });
 
