@@ -100,7 +100,7 @@ gulp.task('ftp-cleanup', function (cb) {
   conn.rmdir('/', cbRmdir);
 });
 
-gulp.task('deploy', ['ftp-cleanup'],  function () {
+gulp.task('deploy', [],  function () {
   var conn = createFTPConnection()
 
   var globs = [
