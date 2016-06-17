@@ -1,0 +1,17 @@
+{
+  "short_name": "hofi.org",
+  "name": "hofi.org",
+  "icons": [
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "57x57",
+      "type": "image/png"
+    }
+  ],
+  "lang": "de-DE",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#4285f4",
+  "background_color": "#000000"
+}
