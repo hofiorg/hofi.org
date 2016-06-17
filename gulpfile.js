@@ -39,7 +39,8 @@ gulp.task('serve', function() {
     server: {
       baseDir: 'web'
     },
-    startPath: "/article"
+    startPath: "/article",
+    browser: 'Google Chrome Canary',
   });
   gulp.watch('generator/articles/**/*.html', ['generate-articles']);
   gulp.watch('generator/template/**/*.html', ['generate-articles']);
