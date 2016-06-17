@@ -4,3 +4,9 @@
 **/libs
 **/web/vulcanized
 ftp.json
+
+generator/out/ArticleGenerator.class
+
+generator/out/ftp.properties
+
+generator/out/FTPUpload.class
