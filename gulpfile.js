@@ -8,6 +8,8 @@ var gulp = require('gulp'),
     vulcanize = require('gulp-vulcanize'),
     gutil = require('gulp-util'),
     ftp = require('vinyl-ftp'),
+    concat = require('gulp-concat'),
+    uglify = require('gulp-uglify'),
     fs = require('fs');
 
 gulp.task('generate-articles', function(cb) {
@@ -42,7 +44,18 @@ gulp.task('serve', function() {
   gulp.watch('generator/articles/**/*.html', ['generate-articles']);
   gulp.watch('generator/template/**/*.html', ['generate-articles']);
   gulp.watch(['**/*.html', 'css/**/*.css'], {cwd: 'web'}, reload);
+
+  gulp.watch('js/**/*.js', uglify_js);
+
+  uglify_js();
 });
+
+function uglify_js() {
+  gulp.src('js/**/*.js')
+    .pipe(concat('index.min.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('./web/'))
+}
 
 gulp.task('install', function(cb) {
   runSequence('clean',
@@ -101,6 +114,8 @@ gulp.task('ftp-cleanup', function (cb) {
 });
 
 gulp.task('deploy', [],  function () {
+  uglify_js();
+
   var conn = createFTPConnection()
 
   var globs = [
@@ -111,4 +126,3 @@ gulp.task('deploy', [],  function () {
            .pipe(conn.newer('/'))
            .pipe(conn.dest('/'));
 });
-

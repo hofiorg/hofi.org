@@ -3,6 +3,7 @@
 **/node_modules
 **/libs
 **/web/vulcanized
+**/web/index.min.js
 ftp.json
 
 generator/out/ArticleGenerator.class
