@@ -17,7 +17,6 @@
       var gup = true;
       var b = Math.floor((Math.random() * 255) + 0); // blue
       var bup = true;
-      var a = 1; // alpha
 
       var rectangleSize = 3;
       var nextPixelRange = 5;
@@ -32,7 +31,7 @@
 
         if(canvas.getContext){
           context = canvas.getContext('2d');          
-          setInterval(drawPixel, 1); 
+          setInterval(drawPixel, 0); 
         }        
       }
 
@@ -44,10 +43,21 @@
         var json = calculateMinMax();
         x = getRandomInt(json.minX, json.maxX);
         y = getRandomInt(json.minY, json.maxY);
-    
-        context.fillStyle = "rgba("+r+","+g+","+b+","+(a)+")";
-        context.fillRect(x, y, rectangleSize, rectangleSize);
-      }    
+
+        drawPixelToCanvas();
+      }
+
+      function drawPixelToCanvas() {
+        var id = context.createImageData(rectangleSize,rectangleSize); 
+        var d  = id.data;
+        for (var i=0;i < id.data.length;i+=4) {
+          id.data[i+0]=r;
+          id.data[i+1]=g;
+          id.data[i+2]=b;
+          id.data[i+3]=255;
+        }                                
+        context.putImageData(id, x, y);          
+      }           
 
       function calculateNextColor() {
         rup ? r++ : r--;
