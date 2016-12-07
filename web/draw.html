@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
   </head>  
-  <body style="margin: 0px">
+  <body style="margin: 0px; padding: 0;">
     <canvas id="canvas"></canvas>
 
     <script lang="text/javascript">
@@ -19,13 +19,13 @@
       var bup = true;
       var a = 1; // alpha
 
-      var rectangleSize = 5;
-      var nextPixelRange = 10;
+      var rectangleSize = 3;
+      var nextPixelRange = 5;
 
       function drawCanvas(){
         canvas = document.getElementById('canvas');
         canvas.width  = window.innerWidth;
-        canvas.height = window.innerHeight;        
+        canvas.height = window.innerHeight - 4;        
         
         x = getRandomInt(1, canvas.width);
         y = getRandomInt(0, canvas.height);
