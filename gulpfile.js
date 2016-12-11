@@ -46,14 +46,23 @@ gulp.task('serve', function() {
   gulp.watch('generator/template/**/*.html', ['generate-articles']);
   gulp.watch(['**/*.html', 'css/**/*.css'], {cwd: 'web'}, reload);
 
-  gulp.watch('js/**/*.js', uglify_js);
+  gulp.watch('js/**/index.js', uglify_js);
+  gulp.watch('js/**/draw.js', uglify_draw_js);
 
   uglify_js();
+  uglify_draw_js();
 });
 
 function uglify_js() {
-  gulp.src('js/**/*.js')
+  gulp.src('js/**/index.js')
     .pipe(concat('index.min.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('./web/'))
+}
+
+function uglify_draw_js() {
+  gulp.src('js/**/draw.js')
+    .pipe(concat('draw.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest('./web/'))
 }
