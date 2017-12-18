@@ -42,8 +42,8 @@ gulp.task('serve', function() {
     startPath: "/article",
     browser: 'Google Chrome Canary',
   });
-  gulp.watch('generator/articles/**/*.html', ['generate-articles']);
-  gulp.watch('generator/template/**/*.html', ['generate-articles']);
+  gulp.watch('generator/articles/**/*.html', gulp.parallel('generate-articles'));
+  gulp.watch('generator/template/**/*.html', gulp.parallel('generate-articles'));
   gulp.watch(['**/*.html', 'css/**/*.css'], {cwd: 'web'}, reload);
 
   gulp.watch('js/**/index.js', uglify_js);
@@ -123,7 +123,7 @@ gulp.task('ftp-cleanup', function (cb) {
   conn.rmdir('/', cbRmdir);
 });
 
-gulp.task('deploy', [],  function () {
+gulp.task('deploy', function () {
   uglify_js();
 
   var conn = createFTPConnection()
