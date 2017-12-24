@@ -7,3 +7,24 @@
   div.mytitle {
     font-weight: 500;
   }
+
+  @media (min-device-width: 1px) {
+      iframe.twitch {
+        width: 100%;
+      }
+  }
+
+  @media (min-device-width: 310px) {
+      iframe.twitch {
+          width: 310px;
+          height: 189px;
+      }
+  }
+
+  @media (min-device-width: 620px) {
+    iframe.twitch {
+      width: 620px;
+      height: 378px;
+    }
+  }
+
