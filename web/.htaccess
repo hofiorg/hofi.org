@@ -1,6 +1,7 @@
 Header add Access-Control-Allow-Origin "*"
 Header add Access-Control-Allow-Methods: "GET,POST,OPTIONS,DELETE,PUT"
 
+Redirect /discord https://discord.gg/ujDVJ9g
 Redirect /twitch https://www.twitch.tv/hofiorg
 Redirect /youtube https://www.youtube.com/channel/UCF7FDDYqG0srtUDlg9MfTGg
 Redirect /yt https://www.youtube.com/channel/UCF7FDDYqG0srtUDlg9MfTGg
