@@ -1,6 +1,5 @@
 var gulp = require('gulp'),
     exec = require('child_process').exec,
-    runSequence = require('run-sequence'),
     browserSync = require('browser-sync'),
     reload = browserSync.reload,
     del = require('del'),
@@ -11,12 +10,6 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     fs = require('fs');
-
-gulp.task('generate-articles', function(cb) {
-  runSequence('compile-articles',
-              'run-articles-generator',
-              cb);
-});
 
 gulp.task('compile-articles', function(cb) {
   exec('javac generator/src/ArticleGenerator.java -d generator/out', function (err, stdout, stderr) {
@@ -33,6 +26,10 @@ gulp.task('run-articles-generator', function(cb) {
     cb(err);
   });
 });
+
+gulp.task('generate-articles', gulp.series('compile-articles', 'run-articles-generator', function(done) {
+  done();
+}));
 
 gulp.task('serve', function() {
   browserSync({
@@ -67,14 +64,6 @@ function uglify_draw_js() {
     .pipe(gulp.dest('./web/'))
 }
 
-gulp.task('install', function(cb) {
-  runSequence('clean',
-              'bower',
-              'copy-bower',
-              'vulcanize',
-               cb);
-});
-
 gulp.task('clean', function() {
   return del([
     'bower_components',
@@ -87,9 +76,10 @@ gulp.task('bower', function() {
   return bower();
 });
 
-gulp.task('copy-bower', function() {
+gulp.task('copy-bower', function(done) {
   gulp.src(['bower_components/jquery/**/*']).pipe(gulp.dest('web/bower_components/jquery'));
   gulp.src(['bower_components/webcomponentsjs/**/*']).pipe(gulp.dest('web/bower_components/webcomponentsjs'));
+  done();
 });
 
 gulp.task('vulcanize', function () {
@@ -103,6 +93,10 @@ gulp.task('vulcanize', function () {
     }))
     .pipe(gulp.dest('web/vulcanized'));
 });
+
+gulp.task('install', gulp.series('clean', 'bower', 'copy-bower', 'vulcanize', function(done) {
+  done();
+}));
 
 function createFTPConnection() {
   var json = JSON.parse(fs.readFileSync('ftp.json'));

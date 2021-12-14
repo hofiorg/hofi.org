@@ -11,7 +11,7 @@ generator/out/ArticleGenerator.class
 generator/out/ftp.properties
 
 generator/out/FTPUpload.class
-
+*.iml
 
 
 # Created by https://www.gitignore.io/api/osx
