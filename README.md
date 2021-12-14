@@ -1,4 +1,4 @@
-hofi.org
+hofi.org &middot; [![NodeJS with Gulp](https://github.com/hofiorg/hofi.org/actions/workflows/npm-gulp.yml/badge.svg)](https://github.com/hofiorg/hofi.org/actions/workflows/npm-gulp.yml)
 ========
 
 #### Content
