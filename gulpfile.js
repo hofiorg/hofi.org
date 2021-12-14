@@ -5,7 +5,7 @@ var gulp = require('gulp'),
     del = require('del'),
     bower = require('gulp-bower'),
     vulcanize = require('gulp-vulcanize'),
-    gutil = require('gulp-util'),
+    flog = require('fancy-log'),
     ftp = require('vinyl-ftp'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
@@ -105,13 +105,13 @@ function createFTPConnection() {
     user:     json.user,
     password: json.password,
     parallel: 10,
-    log:      gutil.log
+    log:      flog
   });
 }
 
 gulp.task('ftp-cleanup', function (cb) {
   var conn = createFTPConnection();
-  function cbRmdir(err) {
+  function cbRmdir() {
     cb();
   }
   conn.rmdir('/', cbRmdir);
