@@ -1,0 +1,30 @@
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+}
+repositories{
+  mavenCentral()
+}
+
+configurations { sshAntTask }
+
+dependencies { sshAntTask 'org.apache.ant:ant-jsch:1.10.9' }
+
+ant.taskdef(
+        name: 'scp',
+        classname: 'org.apache.tools.ant.taskdefs.optional.ssh.Scp',
+        classpath: configurations.sshAntTask.asPath)
+
+task sftp {
+  doLast {
+    ant.scp(
+            file: 'web/index.html',
+            todir: "$sftp_username@$sftp_host:/",
+            password: "$sftp_password",
+            trust: true,
+            sftp: true,
+            failonerror: true
+    )
+  }
+}

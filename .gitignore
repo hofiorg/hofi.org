@@ -46,3 +46,5 @@ Temporary Items
 /web/draw.min.js
 
 .idea
+.gradle
+gradle.properties

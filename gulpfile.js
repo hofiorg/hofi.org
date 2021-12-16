@@ -1,15 +1,12 @@
-var gulp = require('gulp'),
-    exec = require('child_process').exec,
-    browserSync = require('browser-sync'),
-    reload = browserSync.reload,
-    del = require('del'),
-    bower = require('gulp-bower'),
-    vulcanize = require('gulp-vulcanize'),
-    flog = require('fancy-log'),
-    ftp = require('vinyl-ftp'),
-    concat = require('gulp-concat'),
-    uglify = require('gulp-uglify'),
-    fs = require('fs');
+const gulp = require('gulp'),
+      exec = require('child_process').exec,
+      browserSync = require('browser-sync'),
+      reload = browserSync.reload,
+      del = require('del'),
+      bower = require('gulp-bower'),
+      vulcanize = require('gulp-vulcanize'),
+      concat = require('gulp-concat'),
+      uglify = require('gulp-uglify');
 
 gulp.task('compile-articles', function(cb) {
   exec('javac generator/src/ArticleGenerator.java -d generator/out', function (err, stdout, stderr) {
@@ -97,36 +94,3 @@ gulp.task('vulcanize', function () {
 gulp.task('install', gulp.series('clean', 'bower', 'copy-bower', 'vulcanize', function(done) {
   done();
 }));
-
-function createFTPConnection() {
-  var json = JSON.parse(fs.readFileSync('ftp.json'));
-  return ftp.create({
-    host:     json.host,
-    user:     json.user,
-    password: json.password,
-    parallel: 10,
-    log:      flog
-  });
-}
-
-gulp.task('ftp-cleanup', function (cb) {
-  var conn = createFTPConnection();
-  function cbRmdir() {
-    cb();
-  }
-  conn.rmdir('/', cbRmdir);
-});
-
-gulp.task('deploy', function () {
-  uglify_js();
-
-  var conn = createFTPConnection()
-
-  var globs = [
-    'web/**'
-  ];
-
-  return gulp.src(globs, { base: 'web', buffer: false })
-           .pipe(conn.newer('/'))
-           .pipe(conn.dest('/'));
-});

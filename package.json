@@ -18,9 +18,7 @@
     "gulp": "^4.0.2",
     "gulp-bower": "^0.0.15",
     "gulp-vulcanize": "^8.0.0",
-    "run-sequence": "^2.2.1",
-    "vinyl-ftp": "^0.6.1",
-    "fancy-log": "^1.3.3"
+    "run-sequence": "^2.2.1"
   },
   "dependencies": {
     "gulp-concat": "^2.6.1",
