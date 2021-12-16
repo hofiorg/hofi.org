@@ -1,4 +1,4 @@
-# hofi.org &middot; [![NodeJS with Gulp](https://github.com/hofiorg/hofi.org/actions/workflows/npm-gulp.yml/badge.svg)](https://github.com/hofiorg/hofi.org/actions/workflows/npm-gulp.yml)
+# hofi.org &middot; [![NodeJS with Gulp](https://github.com/hofiorg/hofi.org/actions/workflows/npm-gulp.yml/badge.svg)](https://github.com/hofiorg/hofi.org/actions/workflows/npm-gulp.yml) &middot; [![Java CI with Gradle](https://github.com/hofiorg/hofi.org/actions/workflows/gradle.yml/badge.svg)](https://github.com/hofiorg/hofi.org/actions/workflows/gradle.yml)
 
 ## Content
 
