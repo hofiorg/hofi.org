@@ -15,8 +15,8 @@
   "devDependencies": {
     "browser-sync": "^2.27.7",
     "del": "^6.0.0",
-    "gulp": "^4.0.2",
-    "gulp-bower": "^0.0.15",
+    "gulp": "^3.9.1",
+    "gulp-bower": "^0.0.12",
     "gulp-vulcanize": "^8.0.0",
     "run-sequence": "^2.2.1"
   },
